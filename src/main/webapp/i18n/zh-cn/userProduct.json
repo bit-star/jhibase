@@ -1,0 +1,27 @@
+{
+  "jhibaseApp": {
+    "userProduct": {
+      "home": {
+        "title": "User Products",
+        "createLabel": "创建新 User Product",
+        "createOrEditLabel": "创建或编辑 User Product",
+        "notFound": "No User Products found"
+      },
+      "created": "User Product {{ param }} 创建成功",
+      "updated": "User Product {{ param }} 更新成功",
+      "deleted": "User Product {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 User Product {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "User Product"
+      },
+      "productName": "Product Name",
+      "productDes": "Product Des",
+      "imgURL": "Img URL",
+      "createdDate": "Created Date",
+      "updateDate": "Update Date",
+      "user": "User"
+    }
+  }
+}

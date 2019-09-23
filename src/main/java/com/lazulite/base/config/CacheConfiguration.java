@@ -42,6 +42,7 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.base.domain.User.class.getName());
             createCache(cm, com.lazulite.base.domain.Authority.class.getName());
             createCache(cm, com.lazulite.base.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.lazulite.base.domain.UserProduct.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

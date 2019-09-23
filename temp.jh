@@ -1,0 +1,13 @@
+
+
+entity UserProduct {
+	productName String,
+    productDes String,
+    imgURL String,
+    createdDate Instant,
+    updateDate Instant
+}
+
+relationship ManyToOne{
+	UserProduct to User
+}
