@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cspaceFile">
+            <h2><span jhiTranslate="jhibaseApp.cspaceFile.detail.title">Cspace File</span> {{cspaceFile.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.spaceId">Space Id</span></dt>
+                <dd>
+                    <span>{{cspaceFile.spaceId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.fileId">File Id</span></dt>
+                <dd>
+                    <span>{{cspaceFile.fileId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.fileName">File Name</span></dt>
+                <dd>
+                    <span>{{cspaceFile.fileName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.fileSize">File Size</span></dt>
+                <dd>
+                    <span>{{cspaceFile.fileSize}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.fileType">File Type</span></dt>
+                <dd>
+                    <span>{{cspaceFile.fileType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.cspaceFile.governmentReport">Government Report</span></dt>
+                <dd>
+                    <div *ngIf="cspaceFile.governmentReport">
+                        <a [routerLink]="['/government-report', cspaceFile.governmentReport?.id, 'view']">{{cspaceFile.governmentReport?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cspace-file', cspaceFile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

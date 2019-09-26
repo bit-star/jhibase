@@ -1,0 +1,27 @@
+{
+  "jhibaseApp": {
+    "cspaceFile": {
+      "home": {
+        "title": "Cspace Files",
+        "createLabel": "创建新 Cspace File",
+        "createOrEditLabel": "创建或编辑 Cspace File",
+        "notFound": "No Cspace Files found"
+      },
+      "created": "Cspace File {{ param }} 创建成功",
+      "updated": "Cspace File {{ param }} 更新成功",
+      "deleted": "Cspace File {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Cspace File {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Cspace File"
+      },
+      "spaceId": "Space Id",
+      "fileId": "File Id",
+      "fileName": "File Name",
+      "fileSize": "File Size",
+      "fileType": "File Type",
+      "governmentReport": "Government Report"
+    }
+  }
+}

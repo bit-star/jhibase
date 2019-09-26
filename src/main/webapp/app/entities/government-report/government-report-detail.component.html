@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="governmentReport">
+            <h2><span jhiTranslate="jhibaseApp.governmentReport.detail.title">Government Report</span> {{governmentReport.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhibaseApp.GovernmentReportType.' + governmentReport.type}}">{{governmentReport.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.reportDate">Report Date</span></dt>
+                <dd>
+                    <span>{{governmentReport.reportDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.objectName">Object Name</span></dt>
+                <dd>
+                    <span>{{governmentReport.objectName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.position">Position</span></dt>
+                <dd>
+                    <span>{{governmentReport.position}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.contactInformation">Contact Information</span></dt>
+                <dd>
+                    <span>{{governmentReport.contactInformation}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.content">Content</span></dt>
+                <dd>
+                    <span>{{governmentReport.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.governmentReport.location">Location</span></dt>
+                <dd>
+                    <span>{{governmentReport.location}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/government-report', governmentReport.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

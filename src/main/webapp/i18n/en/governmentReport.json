@@ -1,0 +1,29 @@
+{
+  "jhibaseApp": {
+    "governmentReport": {
+      "home": {
+        "title": "Government Reports",
+        "createLabel": "Create a new Government Report",
+        "createOrEditLabel": "Create or edit a Government Report",
+        "notFound": "No Government Reports found"
+      },
+      "created": "A new Government Report is created with identifier {{ param }}",
+      "updated": "A Government Report is updated with identifier {{ param }}",
+      "deleted": "A Government Report is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Government Report {{ id }}?"
+      },
+      "detail": {
+        "title": "Government Report"
+      },
+      "type": "Type",
+      "reportDate": "Report Date",
+      "objectName": "Object Name",
+      "position": "Position",
+      "contactInformation": "Contact Information",
+      "content": "Content",
+      "location": "Location",
+      "cspaceFile": "Cspace File"
+    }
+  }
+}

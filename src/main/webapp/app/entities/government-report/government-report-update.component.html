@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-government-report-heading" jhiTranslate="jhibaseApp.governmentReport.home.createOrEditLabel">Create or edit a Government Report</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="Written">{{'jhibaseApp.GovernmentReportType.Written' | translate}}</option>
+                        <option value="Oral">{{'jhibaseApp.GovernmentReportType.Oral' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.reportDate" for="field_reportDate">Report Date</label>
+                    <div class="d-flex">
+                        <input id="field_reportDate" type="datetime-local" class="form-control" name="reportDate" formControlName="reportDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.objectName" for="field_objectName">Object Name</label>
+                    <input type="text" class="form-control" name="objectName" id="field_objectName"
+                           formControlName="objectName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.position" for="field_position">Position</label>
+                    <input type="text" class="form-control" name="position" id="field_position"
+                           formControlName="position"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.contactInformation" for="field_contactInformation">Contact Information</label>
+                    <input type="text" class="form-control" name="contactInformation" id="field_contactInformation"
+                           formControlName="contactInformation"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.content" for="field_content">Content</label>
+                    <input type="text" class="form-control" name="content" id="field_content"
+                           formControlName="content"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.governmentReport.location" for="field_location">Location</label>
+                    <input type="text" class="form-control" name="location" id="field_location"
+                           formControlName="location"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
