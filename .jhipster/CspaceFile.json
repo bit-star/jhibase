@@ -1,0 +1,43 @@
+{
+    "name": "CspaceFile",
+    "fields": [
+        {
+            "fieldName": "spaceId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileSize",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fileType",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "governmentReport",
+            "otherEntityRelationshipName": "cspaceFile",
+            "relationshipName": "governmentReport",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190926105031",
+    "entityTableName": "cspace_file",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

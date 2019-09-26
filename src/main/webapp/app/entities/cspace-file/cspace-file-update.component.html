@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cspace-file-heading" jhiTranslate="jhibaseApp.cspaceFile.home.createOrEditLabel">Create or edit a Cspace File</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.spaceId" for="field_spaceId">Space Id</label>
+                    <input type="text" class="form-control" name="spaceId" id="field_spaceId"
+                           formControlName="spaceId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.fileId" for="field_fileId">File Id</label>
+                    <input type="text" class="form-control" name="fileId" id="field_fileId"
+                           formControlName="fileId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.fileName" for="field_fileName">File Name</label>
+                    <input type="text" class="form-control" name="fileName" id="field_fileName"
+                           formControlName="fileName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.fileSize" for="field_fileSize">File Size</label>
+                    <input type="number" class="form-control" name="fileSize" id="field_fileSize"
+                           formControlName="fileSize"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.fileType" for="field_fileType">File Type</label>
+                    <input type="text" class="form-control" name="fileType" id="field_fileType"
+                           formControlName="fileType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.cspaceFile.governmentReport" for="field_governmentReport">Government Report</label>
+                    <select class="form-control" id="field_governmentReport" name="governmentReport" formControlName="governmentReport">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="governmentReportOption.id === editForm.get('governmentReport').value?.id ? editForm.get('governmentReport').value : governmentReportOption" *ngFor="let governmentReportOption of governmentreports; trackBy: trackGovernmentReportById">{{governmentReportOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

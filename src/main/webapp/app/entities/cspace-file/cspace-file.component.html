@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.cspaceFile.home.title">Cspace Files</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cspace-file" [routerLink]="['/cspace-file/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.cspaceFile.home.createLabel">
+            Create a new Cspace File
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="cspaceFiles?.length === 0">
+        <span jhiTranslate="jhibaseApp.cspaceFile.home.notFound">No cspaceFiles found</span>
+    </div>
+    <div class="table-responsive" *ngIf="cspaceFiles?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.spaceId">Space Id</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.fileId">File Id</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.fileName">File Name</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.fileSize">File Size</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.fileType">File Type</span></th>
+            <th><span jhiTranslate="jhibaseApp.cspaceFile.governmentReport">Government Report</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cspaceFile of cspaceFiles ;trackBy: trackId">
+                <td><a [routerLink]="['/cspace-file', cspaceFile.id, 'view' ]">{{cspaceFile.id}}</a></td>
+                <td>{{cspaceFile.spaceId}}</td>
+                <td>{{cspaceFile.fileId}}</td>
+                <td>{{cspaceFile.fileName}}</td>
+                <td>{{cspaceFile.fileSize}}</td>
+                <td>{{cspaceFile.fileType}}</td>
+                <td>
+                    <div *ngIf="cspaceFile.governmentReport">
+                        <a [routerLink]="['/government-report', cspaceFile.governmentReport?.id, 'view' ]" >{{cspaceFile.governmentReport?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/cspace-file', cspaceFile.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cspace-file', cspaceFile.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cspace-file', { outlets: { popup: cspaceFile.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

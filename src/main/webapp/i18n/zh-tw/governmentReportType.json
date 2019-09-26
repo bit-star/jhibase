@@ -1,0 +1,9 @@
+{
+  "jhibaseApp": {
+    "GovernmentReportType": {
+      "null": "",
+      "Written": "Written",
+      "Oral": "Oral"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "name": "GovernmentReport",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "GovernmentReportType",
+            "fieldValues": "Written,Oral"
+        },
+        {
+            "fieldName": "reportDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "objectName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "position",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactInformation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cspaceFile",
+            "otherEntityRelationshipName": "governmentReport",
+            "relationshipName": "cspaceFile"
+        }
+    ],
+    "changelogDate": "20190926105032",
+    "entityTableName": "government_report",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

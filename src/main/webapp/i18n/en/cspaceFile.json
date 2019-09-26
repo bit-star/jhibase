@@ -1,0 +1,27 @@
+{
+  "jhibaseApp": {
+    "cspaceFile": {
+      "home": {
+        "title": "Cspace Files",
+        "createLabel": "Create a new Cspace File",
+        "createOrEditLabel": "Create or edit a Cspace File",
+        "notFound": "No Cspace Files found"
+      },
+      "created": "A new Cspace File is created with identifier {{ param }}",
+      "updated": "A Cspace File is updated with identifier {{ param }}",
+      "deleted": "A Cspace File is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cspace File {{ id }}?"
+      },
+      "detail": {
+        "title": "Cspace File"
+      },
+      "spaceId": "Space Id",
+      "fileId": "File Id",
+      "fileName": "File Name",
+      "fileSize": "File Size",
+      "fileType": "File Type",
+      "governmentReport": "Government Report"
+    }
+  }
+}
