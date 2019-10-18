@@ -4,7 +4,7 @@
 entity HistorySearch{
  searchConetnt String,
  searchCount Integer,
- isHot Integer,
+ isHot Boolean,
  createdDate Instant,
  updateDate Instant
 }
