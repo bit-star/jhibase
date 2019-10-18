@@ -42,8 +42,8 @@ public class HistorySearchResourceIT {
     private static final Integer DEFAULT_SEARCH_COUNT = 1;
     private static final Integer UPDATED_SEARCH_COUNT = 2;
 
-    private static final Integer DEFAULT_IS_HOT = 1;
-    private static final Integer UPDATED_IS_HOT = 2;
+    private static final Boolean DEFAULT_IS_HOT = false;
+    private static final Boolean UPDATED_IS_HOT = true;
 
     private static final Instant DEFAULT_CREATED_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -141,7 +141,7 @@ public class HistorySearchResourceIT {
         HistorySearch testHistorySearch = historySearchList.get(historySearchList.size() - 1);
         assertThat(testHistorySearch.getSearchConetnt()).isEqualTo(DEFAULT_SEARCH_CONETNT);
         assertThat(testHistorySearch.getSearchCount()).isEqualTo(DEFAULT_SEARCH_COUNT);
-        assertThat(testHistorySearch.getIsHot()).isEqualTo(DEFAULT_IS_HOT);
+        assertThat(testHistorySearch.isIsHot()).isEqualTo(DEFAULT_IS_HOT);
         assertThat(testHistorySearch.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
         assertThat(testHistorySearch.getUpdateDate()).isEqualTo(DEFAULT_UPDATE_DATE);
     }
@@ -179,7 +179,7 @@ public class HistorySearchResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(historySearch.getId().intValue())))
             .andExpect(jsonPath("$.[*].searchConetnt").value(hasItem(DEFAULT_SEARCH_CONETNT)))
             .andExpect(jsonPath("$.[*].searchCount").value(hasItem(DEFAULT_SEARCH_COUNT)))
-            .andExpect(jsonPath("$.[*].isHot").value(hasItem(DEFAULT_IS_HOT)))
+            .andExpect(jsonPath("$.[*].isHot").value(hasItem(DEFAULT_IS_HOT.booleanValue())))
             .andExpect(jsonPath("$.[*].createdDate").value(hasItem(DEFAULT_CREATED_DATE.toString())))
             .andExpect(jsonPath("$.[*].updateDate").value(hasItem(DEFAULT_UPDATE_DATE.toString())));
     }
@@ -197,7 +197,7 @@ public class HistorySearchResourceIT {
             .andExpect(jsonPath("$.id").value(historySearch.getId().intValue()))
             .andExpect(jsonPath("$.searchConetnt").value(DEFAULT_SEARCH_CONETNT))
             .andExpect(jsonPath("$.searchCount").value(DEFAULT_SEARCH_COUNT))
-            .andExpect(jsonPath("$.isHot").value(DEFAULT_IS_HOT))
+            .andExpect(jsonPath("$.isHot").value(DEFAULT_IS_HOT.booleanValue()))
             .andExpect(jsonPath("$.createdDate").value(DEFAULT_CREATED_DATE.toString()))
             .andExpect(jsonPath("$.updateDate").value(DEFAULT_UPDATE_DATE.toString()));
     }
@@ -240,7 +240,7 @@ public class HistorySearchResourceIT {
         HistorySearch testHistorySearch = historySearchList.get(historySearchList.size() - 1);
         assertThat(testHistorySearch.getSearchConetnt()).isEqualTo(UPDATED_SEARCH_CONETNT);
         assertThat(testHistorySearch.getSearchCount()).isEqualTo(UPDATED_SEARCH_COUNT);
-        assertThat(testHistorySearch.getIsHot()).isEqualTo(UPDATED_IS_HOT);
+        assertThat(testHistorySearch.isIsHot()).isEqualTo(UPDATED_IS_HOT);
         assertThat(testHistorySearch.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
         assertThat(testHistorySearch.getUpdateDate()).isEqualTo(UPDATED_UPDATE_DATE);
     }

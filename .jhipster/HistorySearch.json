@@ -11,7 +11,7 @@
         },
         {
             "fieldName": "isHot",
-            "fieldType": "Integer"
+            "fieldType": "Boolean"
         },
         {
             "fieldName": "createdDate",

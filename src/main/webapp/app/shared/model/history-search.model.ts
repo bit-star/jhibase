@@ -4,7 +4,7 @@ export interface IHistorySearch {
   id?: number;
   searchConetnt?: string;
   searchCount?: number;
-  isHot?: number;
+  isHot?: boolean;
   createdDate?: Moment;
   updateDate?: Moment;
 }
@@ -14,8 +14,10 @@ export class HistorySearch implements IHistorySearch {
     public id?: number,
     public searchConetnt?: string,
     public searchCount?: number,
-    public isHot?: number,
+    public isHot?: boolean,
     public createdDate?: Moment,
     public updateDate?: Moment
-  ) {}
+  ) {
+    this.isHot = this.isHot || false;
+  }
 }

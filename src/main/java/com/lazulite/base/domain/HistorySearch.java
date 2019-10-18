@@ -28,7 +28,7 @@ public class HistorySearch implements Serializable {
     private Integer searchCount;
 
     @Column(name = "is_hot")
-    private Integer isHot;
+    private Boolean isHot;
 
     @Column(name = "created_date")
     private Instant createdDate;
@@ -71,16 +71,16 @@ public class HistorySearch implements Serializable {
         this.searchCount = searchCount;
     }
 
-    public Integer getIsHot() {
+    public Boolean isIsHot() {
         return isHot;
     }
 
-    public HistorySearch isHot(Integer isHot) {
+    public HistorySearch isHot(Boolean isHot) {
         this.isHot = isHot;
         return this;
     }
 
-    public void setIsHot(Integer isHot) {
+    public void setIsHot(Boolean isHot) {
         this.isHot = isHot;
     }
 
@@ -133,7 +133,7 @@ public class HistorySearch implements Serializable {
             "id=" + getId() +
             ", searchConetnt='" + getSearchConetnt() + "'" +
             ", searchCount=" + getSearchCount() +
-            ", isHot=" + getIsHot() +
+            ", isHot='" + isIsHot() + "'" +
             ", createdDate='" + getCreatedDate() + "'" +
             ", updateDate='" + getUpdateDate() + "'" +
             "}";
