@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="historySearch">
+            <h2><span jhiTranslate="jhibaseApp.historySearch.detail.title">History Search</span> {{historySearch.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.historySearch.searchConetnt">Search Conetnt</span></dt>
+                <dd>
+                    <span>{{historySearch.searchConetnt}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.historySearch.searchCount">Search Count</span></dt>
+                <dd>
+                    <span>{{historySearch.searchCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.historySearch.isHot">Is Hot</span></dt>
+                <dd>
+                    <span>{{historySearch.isHot}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.historySearch.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{historySearch.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.historySearch.updateDate">Update Date</span></dt>
+                <dd>
+                    <span>{{historySearch.updateDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/history-search', historySearch.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

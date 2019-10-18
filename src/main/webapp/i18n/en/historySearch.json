@@ -1,0 +1,26 @@
+{
+  "jhibaseApp": {
+    "historySearch": {
+      "home": {
+        "title": "History Searches",
+        "createLabel": "Create a new History Search",
+        "createOrEditLabel": "Create or edit a History Search",
+        "notFound": "No History Searches found"
+      },
+      "created": "A new History Search is created with identifier {{ param }}",
+      "updated": "A History Search is updated with identifier {{ param }}",
+      "deleted": "A History Search is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete History Search {{ id }}?"
+      },
+      "detail": {
+        "title": "History Search"
+      },
+      "searchConetnt": "Search Conetnt",
+      "searchCount": "Search Count",
+      "isHot": "Is Hot",
+      "createdDate": "Created Date",
+      "updateDate": "Update Date"
+    }
+  }
+}
