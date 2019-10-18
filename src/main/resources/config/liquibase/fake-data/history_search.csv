@@ -1,11 +1,11 @@
 id;search_conetnt;search_count;is_hot;created_date;update_date
-1;mobile Fish;77969;59865;2019-10-17T18:29:50;2019-10-18T05:04:37
-2;Computer Practical Fresh Pants;60111;14286;2019-10-17T15:49:40;2019-10-17T17:12:01
-3;Tasty Metal Bacon;93855;21233;2019-10-18T08:48:10;2019-10-18T04:27:27
-4;Soap methodology Albania;43194;2306;2019-10-18T01:49:55;2019-10-17T20:13:37
-5;enable Gorgeous Frozen Pants;23277;45606;2019-10-18T06:38:49;2019-10-17T13:58:38
-6;grey Cambridgeshire;59241;46676;2019-10-18T07:42:24;2019-10-17T12:10:59
-7;Yuan Renminbi Centers;1326;94888;2019-10-17T10:12:32;2019-10-17T09:38:47
-8;cross-platform access;9767;23089;2019-10-17T16:24:00;2019-10-18T03:02:13
-9;Bahamian Dollar Investment Account;83319;3438;2019-10-18T04:39:38;2019-10-17T10:59:53
-10;Digitized invoice;31171;42515;2019-10-17T20:20:24;2019-10-18T03:49:51
+1;mobile Fish;77969;true;2019-10-17T18:43:55;2019-10-18T05:18:42
+2;Computer Practical Fresh Pants;60111;false;2019-10-17T16:03:45;2019-10-17T17:26:06
+3;Tasty Metal Bacon;93855;false;2019-10-18T09:02:15;2019-10-18T04:41:33
+4;Soap methodology Albania;43194;false;2019-10-18T02:04:00;2019-10-17T20:27:42
+5;enable Gorgeous Frozen Pants;23277;false;2019-10-18T06:52:54;2019-10-17T14:12:44
+6;grey Cambridgeshire;59241;false;2019-10-18T07:56:29;2019-10-17T12:25:04
+7;Yuan Renminbi Centers;1326;true;2019-10-17T10:26:37;2019-10-17T09:52:52
+8;cross-platform access;9767;false;2019-10-17T16:38:05;2019-10-18T03:16:18
+9;Bahamian Dollar Investment Account;83319;false;2019-10-18T04:53:44;2019-10-17T11:13:58
+10;Digitized invoice;31171;false;2019-10-17T20:34:29;2019-10-18T04:03:56

@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new HistorySearch(0, 'AAAAAAA', 0, 0, currentDate, currentDate);
+      elemDefault = new HistorySearch(0, 'AAAAAAA', 0, false, currentDate, currentDate);
     });
 
     describe('Service methods', () => {
@@ -76,7 +76,7 @@ describe('Service Tests', () => {
           {
             searchConetnt: 'BBBBBB',
             searchCount: 1,
-            isHot: 1,
+            isHot: true,
             createdDate: currentDate.format(DATE_TIME_FORMAT),
             updateDate: currentDate.format(DATE_TIME_FORMAT)
           },
@@ -104,7 +104,7 @@ describe('Service Tests', () => {
           {
             searchConetnt: 'BBBBBB',
             searchCount: 1,
-            isHot: 1,
+            isHot: true,
             createdDate: currentDate.format(DATE_TIME_FORMAT),
             updateDate: currentDate.format(DATE_TIME_FORMAT)
           },
