@@ -1,32 +1,26 @@
 
 
-   entity CspaceFile{
-   		spaceId String,
-        fileId String,
-        fileName String,
-        fileSize Long,
-        fileType String
-   }
-   
-   entity GovernmentReport{
-        type GovernmentReportType,
-        reportDate Instant,
-        objectName String,
-        position String,
-        contactInformation String,
-        //1-* Photo
-        content String,
-        location String
-        }
-        
-        enum GovernmentReportType {
-        Written ,  Oral
-        }
 
-
- relationship OneToMany {
-        GovernmentReport to CspaceFile,
-     
+entity HistorySearch{
+ searchConetnt String,
+ searchCount Integer,
+ isHot Integer,
+ createdDate Instant,
+ updateDate Instant
 }
-        
-        
+
+
+
+
+
+paginate HistorySearch with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceClass 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+

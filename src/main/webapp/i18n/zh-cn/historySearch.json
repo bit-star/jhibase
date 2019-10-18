@@ -1,0 +1,26 @@
+{
+  "jhibaseApp": {
+    "historySearch": {
+      "home": {
+        "title": "History Searches",
+        "createLabel": "创建新 History Search",
+        "createOrEditLabel": "创建或编辑 History Search",
+        "notFound": "No History Searches found"
+      },
+      "created": "History Search {{ param }} 创建成功",
+      "updated": "History Search {{ param }} 更新成功",
+      "deleted": "History Search {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 History Search {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "History Search"
+      },
+      "searchConetnt": "Search Conetnt",
+      "searchCount": "Search Count",
+      "isHot": "Is Hot",
+      "createdDate": "Created Date",
+      "updateDate": "Update Date"
+    }
+  }
+}

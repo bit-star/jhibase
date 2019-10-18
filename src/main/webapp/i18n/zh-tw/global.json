@@ -10,6 +10,7 @@
         "userProduct": "User Product",
         "cspaceFile": "Cspace File",
         "governmentReport": "Government Report",
+        "historySearch": "History Search",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
