@@ -1,0 +1,41 @@
+{
+  "jhibaseApp": {
+    "locationDTO": {
+      "home": {
+        "title": "Location DTOS",
+        "createLabel": "Create a new Location DTO",
+        "createOrEditLabel": "Create or edit a Location DTO",
+        "notFound": "No Location DTOS found"
+      },
+      "created": "A new Location DTO is created with identifier {{ param }}",
+      "updated": "A Location DTO is updated with identifier {{ param }}",
+      "deleted": "A Location DTO is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location DTO {{ id }}?"
+      },
+      "detail": {
+        "title": "Location DTO"
+      },
+      "stationId": "Station Id",
+      "groupName": "Group Name",
+      "stationName": "Station Name",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "accuracy": "Accuracy",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "district": "District",
+      "road": "Road",
+      "netType": "Net Type",
+      "operatorType": "Operator Type",
+      "ddUserName": "Dd User Name",
+      "ddUserId": "Dd User Id",
+      "ddUserPhone": "Dd User Phone",
+      "isFinish": "Is Finish",
+      "workLogMainId": "Work Log Main Id",
+      "workLogType": "Work Log Type",
+      "createdDate": "Created Date"
+    }
+  }
+}

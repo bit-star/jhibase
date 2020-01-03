@@ -1,0 +1,11 @@
+{
+  "jhibaseApp": {
+    "WorkLogType": {
+      "null": "",
+      "HealthRoom": "HealthRoom",
+      "HealthCenter": "HealthCenter",
+      "Patient": "Patient",
+      "GovernmentAndOther": "GovernmentAndOther"
+    }
+  }
+}
