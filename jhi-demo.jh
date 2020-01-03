@@ -6,7 +6,7 @@ enum WorkLogType {
 
 
 
-entity LocationDTO{
+entity LocationVM{
 
       stationId Long,
 
