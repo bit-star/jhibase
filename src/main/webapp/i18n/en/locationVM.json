@@ -1,0 +1,41 @@
+{
+  "jhibaseApp": {
+    "locationVM": {
+      "home": {
+        "title": "Location VMS",
+        "createLabel": "Create a new Location VM",
+        "createOrEditLabel": "Create or edit a Location VM",
+        "notFound": "No Location VMS found"
+      },
+      "created": "A new Location VM is created with identifier {{ param }}",
+      "updated": "A Location VM is updated with identifier {{ param }}",
+      "deleted": "A Location VM is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location VM {{ id }}?"
+      },
+      "detail": {
+        "title": "Location VM"
+      },
+      "stationId": "Station Id",
+      "groupName": "Group Name",
+      "stationName": "Station Name",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "accuracy": "Accuracy",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "district": "District",
+      "road": "Road",
+      "netType": "Net Type",
+      "operatorType": "Operator Type",
+      "ddUserName": "Dd User Name",
+      "ddUserId": "Dd User Id",
+      "ddUserPhone": "Dd User Phone",
+      "isFinish": "Is Finish",
+      "workLogMainId": "Work Log Main Id",
+      "workLogType": "Work Log Type",
+      "createdDate": "Created Date"
+    }
+  }
+}

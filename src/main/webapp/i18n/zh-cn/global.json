@@ -12,6 +12,7 @@
         "governmentReport": "Government Report",
         "historySearch": "History Search",
         "locationDto": "Location DTO",
+        "locationVm": "Location VM",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
