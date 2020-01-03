@@ -13,6 +13,7 @@
         "historySearch": "History Search",
         "locationDto": "Location DTO",
         "locationVm": "Location VM",
+        "locationFlat": "Location Flat",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

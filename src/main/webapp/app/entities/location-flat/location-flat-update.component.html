@@ -1,0 +1,129 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-location-flat-heading" jhiTranslate="jhibaseApp.locationFlat.home.createOrEditLabel">Create or edit a Location Flat</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.stationId" for="field_stationId">Station Id</label>
+                    <input type="number" class="form-control" name="stationId" id="field_stationId"
+                           formControlName="stationId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.groupName" for="field_groupName">Group Name</label>
+                    <input type="text" class="form-control" name="groupName" id="field_groupName"
+                           formControlName="groupName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.stationName" for="field_stationName">Station Name</label>
+                    <input type="text" class="form-control" name="stationName" id="field_stationName"
+                           formControlName="stationName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.longitude" for="field_longitude">Longitude</label>
+                    <input type="number" class="form-control" name="longitude" id="field_longitude"
+                           formControlName="longitude"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.latitude" for="field_latitude">Latitude</label>
+                    <input type="number" class="form-control" name="latitude" id="field_latitude"
+                           formControlName="latitude"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.accuracy" for="field_accuracy">Accuracy</label>
+                    <input type="text" class="form-control" name="accuracy" id="field_accuracy"
+                           formControlName="accuracy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.province" for="field_province">Province</label>
+                    <input type="text" class="form-control" name="province" id="field_province"
+                           formControlName="province"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.district" for="field_district">District</label>
+                    <input type="text" class="form-control" name="district" id="field_district"
+                           formControlName="district"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.road" for="field_road">Road</label>
+                    <input type="text" class="form-control" name="road" id="field_road"
+                           formControlName="road"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.netType" for="field_netType">Net Type</label>
+                    <input type="text" class="form-control" name="netType" id="field_netType"
+                           formControlName="netType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.operatorType" for="field_operatorType">Operator Type</label>
+                    <input type="text" class="form-control" name="operatorType" id="field_operatorType"
+                           formControlName="operatorType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.ddUserName" for="field_ddUserName">Dd User Name</label>
+                    <input type="text" class="form-control" name="ddUserName" id="field_ddUserName"
+                           formControlName="ddUserName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.ddUserId" for="field_ddUserId">Dd User Id</label>
+                    <input type="number" class="form-control" name="ddUserId" id="field_ddUserId"
+                           formControlName="ddUserId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.ddUserPhone" for="field_ddUserPhone">Dd User Phone</label>
+                    <input type="text" class="form-control" name="ddUserPhone" id="field_ddUserPhone"
+                           formControlName="ddUserPhone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.isFinish" for="field_isFinish">Is Finish</label>
+                    <input type="checkbox" class="form-control" name="isFinish" id="field_isFinish"
+                           formControlName="isFinish"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.workLogMainId" for="field_workLogMainId">Work Log Main Id</label>
+                    <input type="number" class="form-control" name="workLogMainId" id="field_workLogMainId"
+                           formControlName="workLogMainId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.workLogType" for="field_workLogType">Work Log Type</label>
+                    <select class="form-control" name="workLogType" formControlName="workLogType" id="field_workLogType">
+                        <option value="HealthRoom">{{'jhibaseApp.WorkLogType.HealthRoom' | translate}}</option>
+                        <option value="HealthCenter">{{'jhibaseApp.WorkLogType.HealthCenter' | translate}}</option>
+                        <option value="Patient">{{'jhibaseApp.WorkLogType.Patient' | translate}}</option>
+                        <option value="GovernmentAndOther">{{'jhibaseApp.WorkLogType.GovernmentAndOther' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.locationFlat.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
