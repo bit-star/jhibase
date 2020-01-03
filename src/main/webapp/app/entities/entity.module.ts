@@ -19,6 +19,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'history-search',
         loadChildren: () => import('./history-search/history-search.module').then(m => m.JhibaseHistorySearchModule)
+      },
+      {
+        path: 'location-dto',
+        loadChildren: () => import('./location-dto/location-dto.module').then(m => m.JhibaseLocationDTOModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

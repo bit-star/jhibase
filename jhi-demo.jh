@@ -1,0 +1,52 @@
+
+
+enum WorkLogType {
+    HealthRoom, HealthCenter, Patient, GovernmentAndOther
+}
+
+
+
+entity LocationDTO{
+
+      stationId Long,
+
+      groupName String,
+
+  	  stationName String,
+
+      id Long,
+
+  	  longitude BigDecimal,
+
+      latitude BigDecimal,
+
+      accuracy String,
+
+      address String,
+
+      province String,
+
+      city String,
+     
+      district String,
+     
+      road String,
+
+      netType String,
+
+      operatorType String,
+
+      ddUserName String,
+      
+      ddUserId Long,
+
+      ddUserPhone String,
+
+      isFinish Boolean,
+
+      workLogMainId Long,
+
+      workLogType WorkLogType,
+
+      createdDate Instant
+}

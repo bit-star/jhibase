@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.locationDTO.home.title">Location DTOS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-location-dto" [routerLink]="['/location-dto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.locationDTO.home.createLabel">
+            Create a new Location DTO
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="locationDTOS?.length === 0">
+        <span jhiTranslate="jhibaseApp.locationDTO.home.notFound">No locationDTOS found</span>
+    </div>
+    <div class="table-responsive" *ngIf="locationDTOS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.stationId">Station Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.groupName">Group Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.stationName">Station Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.longitude">Longitude</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.latitude">Latitude</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.accuracy">Accuracy</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.address">Address</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.province">Province</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.city">City</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.district">District</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.road">Road</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.netType">Net Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.operatorType">Operator Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.ddUserName">Dd User Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.ddUserId">Dd User Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.ddUserPhone">Dd User Phone</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.isFinish">Is Finish</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.workLogMainId">Work Log Main Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.workLogType">Work Log Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationDTO.createdDate">Created Date</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let locationDTO of locationDTOS ;trackBy: trackId">
+                <td><a [routerLink]="['/location-dto', locationDTO.id, 'view' ]">{{locationDTO.id}}</a></td>
+                <td>{{locationDTO.stationId}}</td>
+                <td>{{locationDTO.groupName}}</td>
+                <td>{{locationDTO.stationName}}</td>
+                <td>{{locationDTO.longitude}}</td>
+                <td>{{locationDTO.latitude}}</td>
+                <td>{{locationDTO.accuracy}}</td>
+                <td>{{locationDTO.address}}</td>
+                <td>{{locationDTO.province}}</td>
+                <td>{{locationDTO.city}}</td>
+                <td>{{locationDTO.district}}</td>
+                <td>{{locationDTO.road}}</td>
+                <td>{{locationDTO.netType}}</td>
+                <td>{{locationDTO.operatorType}}</td>
+                <td>{{locationDTO.ddUserName}}</td>
+                <td>{{locationDTO.ddUserId}}</td>
+                <td>{{locationDTO.ddUserPhone}}</td>
+                <td>{{locationDTO.isFinish}}</td>
+                <td>{{locationDTO.workLogMainId}}</td>
+                <td jhiTranslate="{{'jhibaseApp.WorkLogType.' + locationDTO.workLogType}}">{{locationDTO.workLogType}}</td>
+                <td>{{locationDTO.createdDate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/location-dto', locationDTO.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/location-dto', locationDTO.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(locationDTO)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

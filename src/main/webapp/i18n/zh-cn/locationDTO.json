@@ -1,0 +1,41 @@
+{
+  "jhibaseApp": {
+    "locationDTO": {
+      "home": {
+        "title": "Location DTOS",
+        "createLabel": "创建新 Location DTO",
+        "createOrEditLabel": "创建或编辑 Location DTO",
+        "notFound": "No Location DTOS found"
+      },
+      "created": "Location DTO {{ param }} 创建成功",
+      "updated": "Location DTO {{ param }} 更新成功",
+      "deleted": "Location DTO {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Location DTO {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Location DTO"
+      },
+      "stationId": "Station Id",
+      "groupName": "Group Name",
+      "stationName": "Station Name",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "accuracy": "Accuracy",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "district": "District",
+      "road": "Road",
+      "netType": "Net Type",
+      "operatorType": "Operator Type",
+      "ddUserName": "Dd User Name",
+      "ddUserId": "Dd User Id",
+      "ddUserPhone": "Dd User Phone",
+      "isFinish": "Is Finish",
+      "workLogMainId": "Work Log Main Id",
+      "workLogType": "Work Log Type",
+      "createdDate": "Created Date"
+    }
+  }
+}
