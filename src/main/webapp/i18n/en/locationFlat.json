@@ -1,0 +1,41 @@
+{
+  "jhibaseApp": {
+    "locationFlat": {
+      "home": {
+        "title": "Location Flats",
+        "createLabel": "Create a new Location Flat",
+        "createOrEditLabel": "Create or edit a Location Flat",
+        "notFound": "No Location Flats found"
+      },
+      "created": "A new Location Flat is created with identifier {{ param }}",
+      "updated": "A Location Flat is updated with identifier {{ param }}",
+      "deleted": "A Location Flat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Flat {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Flat"
+      },
+      "stationId": "Station Id",
+      "groupName": "Group Name",
+      "stationName": "Station Name",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "accuracy": "Accuracy",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "district": "District",
+      "road": "Road",
+      "netType": "Net Type",
+      "operatorType": "Operator Type",
+      "ddUserName": "Dd User Name",
+      "ddUserId": "Dd User Id",
+      "ddUserPhone": "Dd User Phone",
+      "isFinish": "Is Finish",
+      "workLogMainId": "Work Log Main Id",
+      "workLogType": "Work Log Type",
+      "createdDate": "Created Date"
+    }
+  }
+}

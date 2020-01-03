@@ -1,0 +1,41 @@
+{
+  "jhibaseApp": {
+    "locationFlat": {
+      "home": {
+        "title": "Location Flats",
+        "createLabel": "建立一筆新的 Location Flat",
+        "createOrEditLabel": "建立或編輯 Location Flat",
+        "notFound": "No Location Flats found"
+      },
+      "created": "新的 Location Flat 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Location Flat 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Location Flat 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Location Flat {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Location Flat"
+      },
+      "stationId": "Station Id",
+      "groupName": "Group Name",
+      "stationName": "Station Name",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "accuracy": "Accuracy",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "district": "District",
+      "road": "Road",
+      "netType": "Net Type",
+      "operatorType": "Operator Type",
+      "ddUserName": "Dd User Name",
+      "ddUserId": "Dd User Id",
+      "ddUserPhone": "Dd User Phone",
+      "isFinish": "Is Finish",
+      "workLogMainId": "Work Log Main Id",
+      "workLogType": "Work Log Type",
+      "createdDate": "Created Date"
+    }
+  }
+}

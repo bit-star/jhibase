@@ -27,6 +27,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'location-vm',
         loadChildren: () => import('./location-vm/location-vm.module').then(m => m.JhibaseLocationVMModule)
+      },
+      {
+        path: 'location-flat',
+        loadChildren: () => import('./location-flat/location-flat.module').then(m => m.JhibaseLocationFlatModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
