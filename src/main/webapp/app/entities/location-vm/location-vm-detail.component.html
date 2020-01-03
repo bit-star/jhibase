@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locationVM">
+            <h2><span jhiTranslate="jhibaseApp.locationVM.detail.title">Location VM</span> {{locationVM.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.locationVM.stationId">Station Id</span></dt>
+                <dd>
+                    <span>{{locationVM.stationId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.groupName">Group Name</span></dt>
+                <dd>
+                    <span>{{locationVM.groupName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.stationName">Station Name</span></dt>
+                <dd>
+                    <span>{{locationVM.stationName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{locationVM.longitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{locationVM.latitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.accuracy">Accuracy</span></dt>
+                <dd>
+                    <span>{{locationVM.accuracy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.address">Address</span></dt>
+                <dd>
+                    <span>{{locationVM.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.province">Province</span></dt>
+                <dd>
+                    <span>{{locationVM.province}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.city">City</span></dt>
+                <dd>
+                    <span>{{locationVM.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.district">District</span></dt>
+                <dd>
+                    <span>{{locationVM.district}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.road">Road</span></dt>
+                <dd>
+                    <span>{{locationVM.road}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.netType">Net Type</span></dt>
+                <dd>
+                    <span>{{locationVM.netType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.operatorType">Operator Type</span></dt>
+                <dd>
+                    <span>{{locationVM.operatorType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.ddUserName">Dd User Name</span></dt>
+                <dd>
+                    <span>{{locationVM.ddUserName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.ddUserId">Dd User Id</span></dt>
+                <dd>
+                    <span>{{locationVM.ddUserId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.ddUserPhone">Dd User Phone</span></dt>
+                <dd>
+                    <span>{{locationVM.ddUserPhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.isFinish">Is Finish</span></dt>
+                <dd>
+                    <span>{{locationVM.isFinish}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.workLogMainId">Work Log Main Id</span></dt>
+                <dd>
+                    <span>{{locationVM.workLogMainId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.workLogType">Work Log Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhibaseApp.WorkLogType.' + locationVM.workLogType}}">{{locationVM.workLogType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.locationVM.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{locationVM.createdDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/location-vm', locationVM.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

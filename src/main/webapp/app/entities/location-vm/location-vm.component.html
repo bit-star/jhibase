@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.locationVM.home.title">Location VMS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-location-vm" [routerLink]="['/location-vm/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.locationVM.home.createLabel">
+            Create a new Location VM
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="locationVMS?.length === 0">
+        <span jhiTranslate="jhibaseApp.locationVM.home.notFound">No locationVMS found</span>
+    </div>
+    <div class="table-responsive" *ngIf="locationVMS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.stationId">Station Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.groupName">Group Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.stationName">Station Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.longitude">Longitude</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.latitude">Latitude</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.accuracy">Accuracy</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.address">Address</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.province">Province</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.city">City</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.district">District</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.road">Road</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.netType">Net Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.operatorType">Operator Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.ddUserName">Dd User Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.ddUserId">Dd User Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.ddUserPhone">Dd User Phone</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.isFinish">Is Finish</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.workLogMainId">Work Log Main Id</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.workLogType">Work Log Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhibaseApp.locationVM.createdDate">Created Date</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let locationVM of locationVMS ;trackBy: trackId">
+                <td><a [routerLink]="['/location-vm', locationVM.id, 'view' ]">{{locationVM.id}}</a></td>
+                <td>{{locationVM.stationId}}</td>
+                <td>{{locationVM.groupName}}</td>
+                <td>{{locationVM.stationName}}</td>
+                <td>{{locationVM.longitude}}</td>
+                <td>{{locationVM.latitude}}</td>
+                <td>{{locationVM.accuracy}}</td>
+                <td>{{locationVM.address}}</td>
+                <td>{{locationVM.province}}</td>
+                <td>{{locationVM.city}}</td>
+                <td>{{locationVM.district}}</td>
+                <td>{{locationVM.road}}</td>
+                <td>{{locationVM.netType}}</td>
+                <td>{{locationVM.operatorType}}</td>
+                <td>{{locationVM.ddUserName}}</td>
+                <td>{{locationVM.ddUserId}}</td>
+                <td>{{locationVM.ddUserPhone}}</td>
+                <td>{{locationVM.isFinish}}</td>
+                <td>{{locationVM.workLogMainId}}</td>
+                <td jhiTranslate="{{'jhibaseApp.WorkLogType.' + locationVM.workLogType}}">{{locationVM.workLogType}}</td>
+                <td>{{locationVM.createdDate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/location-vm', locationVM.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/location-vm', locationVM.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(locationVM)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
