@@ -50,6 +50,9 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.base.domain.LocationDTO.class.getName());
             createCache(cm, com.lazulite.base.domain.LocationVM.class.getName());
             createCache(cm, com.lazulite.base.domain.LocationFlat.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".serviceWindows");
+            createCache(cm, com.lazulite.base.domain.ServiceWindow.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

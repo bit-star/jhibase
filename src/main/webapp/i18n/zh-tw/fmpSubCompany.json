@@ -1,0 +1,28 @@
+{
+  "jhibaseApp": {
+    "fmpSubCompany": {
+      "home": {
+        "title": "Fmp Sub Companies",
+        "createLabel": "建立一筆新的 Fmp Sub Company",
+        "createOrEditLabel": "建立或編輯 Fmp Sub Company",
+        "notFound": "No Fmp Sub Companies found"
+      },
+      "created": "新的 Fmp Sub Company 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Fmp Sub Company 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Fmp Sub Company 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Fmp Sub Company {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Fmp Sub Company"
+      },
+      "name": "Name",
+      "code": "Code",
+      "adminGroupId": "Admin Group Id",
+      "ifPublic": "If Public",
+      "styleId": "Style Id",
+      "isDeleted": "Is Deleted",
+      "serviceWindow": "Service Window"
+    }
+  }
+}

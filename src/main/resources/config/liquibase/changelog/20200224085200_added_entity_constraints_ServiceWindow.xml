@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ServiceWindow.
+    -->
+    <changeSet id="20200224085200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
+                                 baseTableName="service_window"
+                                 constraintName="fk_service_window_fmp_sub_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+    </changeSet>
+</databaseChangeLog>

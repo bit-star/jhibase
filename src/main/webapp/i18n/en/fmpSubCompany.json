@@ -1,0 +1,28 @@
+{
+  "jhibaseApp": {
+    "fmpSubCompany": {
+      "home": {
+        "title": "Fmp Sub Companies",
+        "createLabel": "Create a new Fmp Sub Company",
+        "createOrEditLabel": "Create or edit a Fmp Sub Company",
+        "notFound": "No Fmp Sub Companies found"
+      },
+      "created": "A new Fmp Sub Company is created with identifier {{ param }}",
+      "updated": "A Fmp Sub Company is updated with identifier {{ param }}",
+      "deleted": "A Fmp Sub Company is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fmp Sub Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Fmp Sub Company"
+      },
+      "name": "Name",
+      "code": "Code",
+      "adminGroupId": "Admin Group Id",
+      "ifPublic": "If Public",
+      "styleId": "Style Id",
+      "isDeleted": "Is Deleted",
+      "serviceWindow": "Service Window"
+    }
+  }
+}

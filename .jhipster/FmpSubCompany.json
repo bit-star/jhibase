@@ -1,0 +1,48 @@
+{
+    "name": "FmpSubCompany",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adminGroupId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ifPublic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "styleId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isDeleted",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceWindow",
+            "otherEntityRelationshipName": "fmpSubCompany",
+            "relationshipName": "serviceWindow"
+        }
+    ],
+    "changelogDate": "20200224085100",
+    "entityTableName": "fmp_sub_company",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mp"
+}

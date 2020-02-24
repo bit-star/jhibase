@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.serviceWindow.home.title">Service Windows</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-window-mp" [routerLink]="['/service-window-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.serviceWindow.home.createLabel">
+            Create a new Service Window
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="serviceWindows?.length === 0">
+        <span jhiTranslate="jhibaseApp.serviceWindow.home.notFound">No serviceWindows found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="serviceWindows?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.userId">User Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.link">Link</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.icon">Icon</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.rank">Rank</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.remark">Remark</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.serviceWindow.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let serviceWindow of serviceWindows ;trackBy: trackId">
+                    <td><a [routerLink]="['/service-window-mp', serviceWindow.id, 'view']">{{ serviceWindow.id }}</a></td>
+                    <td>{{ serviceWindow.name }}</td>
+                    <td>{{ serviceWindow.userId }}</td>
+                    <td>{{ serviceWindow.link }}</td>
+                    <td>{{ serviceWindow.icon }}</td>
+                    <td>{{ serviceWindow.rank }}</td>
+                    <td>{{ serviceWindow.remark }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.Status.' + serviceWindow.status }}">{{ serviceWindow.status }}</td>
+                    <td>
+                        <div *ngIf="serviceWindow.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', serviceWindow.fmpSubCompany?.id, 'view']" >{{ serviceWindow.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/service-window-mp', serviceWindow.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/service-window-mp', serviceWindow.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(serviceWindow)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

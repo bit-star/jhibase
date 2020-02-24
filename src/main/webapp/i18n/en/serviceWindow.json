@@ -1,0 +1,29 @@
+{
+  "jhibaseApp": {
+    "serviceWindow": {
+      "home": {
+        "title": "Service Windows",
+        "createLabel": "Create a new Service Window",
+        "createOrEditLabel": "Create or edit a Service Window",
+        "notFound": "No Service Windows found"
+      },
+      "created": "A new Service Window is created with identifier {{ param }}",
+      "updated": "A Service Window is updated with identifier {{ param }}",
+      "deleted": "A Service Window is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Window {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Window"
+      },
+      "name": "Name",
+      "userId": "User Id",
+      "link": "Link",
+      "icon": "Icon",
+      "rank": "Rank",
+      "remark": "Remark",
+      "status": "Status",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}
