@@ -31,6 +31,14 @@ import { RouterModule } from '@angular/router';
       {
         path: 'location-flat',
         loadChildren: () => import('./location-flat/location-flat.module').then(m => m.JhibaseLocationFlatModule)
+      },
+      {
+        path: 'fmp-sub-company-mp',
+        loadChildren: () => import('./fmp-sub-company-mp/fmp-sub-company-mp.module').then(m => m.JhibaseFmpSubCompanyMpModule)
+      },
+      {
+        path: 'service-window-mp',
+        loadChildren: () => import('./service-window-mp/service-window-mp.module').then(m => m.JhibaseServiceWindowMpModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

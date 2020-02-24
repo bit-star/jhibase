@@ -1,0 +1,29 @@
+{
+  "jhibaseApp": {
+    "serviceWindow": {
+      "home": {
+        "title": "Service Windows",
+        "createLabel": "创建新 Service Window",
+        "createOrEditLabel": "创建或编辑 Service Window",
+        "notFound": "No Service Windows found"
+      },
+      "created": "Service Window {{ param }} 创建成功",
+      "updated": "Service Window {{ param }} 更新成功",
+      "deleted": "Service Window {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Service Window {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Service Window"
+      },
+      "name": "Name",
+      "userId": "User Id",
+      "link": "Link",
+      "icon": "Icon",
+      "rank": "Rank",
+      "remark": "Remark",
+      "status": "Status",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

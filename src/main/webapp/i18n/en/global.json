@@ -14,6 +14,8 @@
         "locationDto": "Location DTO",
         "locationVm": "Location VM",
         "locationFlat": "Location Flat",
+        "fmpSubCompanyMp": "Fmp Sub Company",
+        "serviceWindowMp": "Service Window",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

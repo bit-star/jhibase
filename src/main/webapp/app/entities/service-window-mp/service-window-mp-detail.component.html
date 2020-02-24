@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceWindow">
+            <h2><span jhiTranslate="jhibaseApp.serviceWindow.detail.title">Service Window</span> {{ serviceWindow.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.name">Name</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.userId">User Id</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.userId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.link">Link</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.link }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.icon">Icon</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.icon }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.rank">Rank</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.rank }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.remark">Remark</span></dt>
+                <dd>
+                    <span>{{ serviceWindow.remark }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.Status.' + serviceWindow.status }}">{{ serviceWindow.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.serviceWindow.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="serviceWindow.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', serviceWindow.fmpSubCompany?.id, 'view']">{{ serviceWindow.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-window-mp', serviceWindow.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
