@@ -1,0 +1,27 @@
+{
+  "jhibaseApp": {
+    "pushSubject": {
+      "home": {
+        "title": "Push Subjects",
+        "createLabel": "Create a new Push Subject",
+        "createOrEditLabel": "Create or edit a Push Subject",
+        "notFound": "No Push Subjects found"
+      },
+      "created": "A new Push Subject is created with identifier {{ param }}",
+      "updated": "A Push Subject is updated with identifier {{ param }}",
+      "deleted": "A Push Subject is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Push Subject {{ id }}?"
+      },
+      "detail": {
+        "title": "Push Subject"
+      },
+      "agentId": "Agent Id",
+      "name": "Name",
+      "agentGroupId": "Agent Group Id",
+      "titleColor": "Title Color",
+      "remark": "Remark",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

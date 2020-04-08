@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="msgReceiverGroup">
+            <h2><span jhiTranslate="jhibaseApp.msgReceiverGroup.detail.title">Msg Receiver Group</span> {{ msgReceiverGroup.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.name">Name</span></dt>
+                <dd>
+                    <span>{{ msgReceiverGroup.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.desc">Desc</span></dt>
+                <dd>
+                    <span>{{ msgReceiverGroup.desc }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="msgReceiverGroup.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', msgReceiverGroup.fmpSubCompany?.id, 'view']">{{ msgReceiverGroup.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/msg-receiver-group-mp', msgReceiverGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

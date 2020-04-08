@@ -1,37 +1,18 @@
 {
     "name": "FmpSubCompany",
-    "fields": [
-        {
-            "fieldName": "name",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "code",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "adminGroupId",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "ifPublic",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "styleId",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "isDeleted",
-            "fieldType": "Boolean"
-        }
-    ],
+    "fields": [],
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "serviceWindow",
+            "otherEntityName": "msgReceiverGroup",
             "otherEntityRelationshipName": "fmpSubCompany",
-            "relationshipName": "serviceWindow"
+            "relationshipName": "msgReceiverGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "pushSubject",
+            "otherEntityRelationshipName": "fmpSubCompany",
+            "relationshipName": "pushSubject"
         }
     ],
     "changelogDate": "20200224085100",
@@ -44,5 +25,6 @@
     "readOnly": false,
     "clientRootFolder": "",
     "applications": "*",
-    "angularJSSuffix": "mp"
+    "angularJSSuffix": "mp",
+    "embedded": false
 }

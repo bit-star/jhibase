@@ -1,0 +1,22 @@
+{
+  "jhibaseApp": {
+    "uucUserBaseinfo": {
+      "home": {
+        "title": "Uuc User Baseinfos",
+        "createLabel": "创建新 Uuc User Baseinfo",
+        "createOrEditLabel": "创建或编辑 Uuc User Baseinfo",
+        "notFound": "No Uuc User Baseinfos found"
+      },
+      "created": "Uuc User Baseinfo {{ param }} 创建成功",
+      "updated": "Uuc User Baseinfo {{ param }} 更新成功",
+      "deleted": "Uuc User Baseinfo {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Uuc User Baseinfo {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Uuc User Baseinfo"
+      },
+      "msgReceiverGroup": "Msg Receiver Group"
+    }
+  }
+}

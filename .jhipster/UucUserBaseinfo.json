@@ -1,0 +1,25 @@
+{
+    "name": "UucUserBaseinfo",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "msgReceiverGroup",
+            "otherEntityRelationshipName": "uucUserBaseinfo",
+            "relationshipName": "msgReceiverGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408094100",
+    "entityTableName": "uuc_user_baseinfo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mp"
+}

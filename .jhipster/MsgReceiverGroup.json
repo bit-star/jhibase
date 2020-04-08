@@ -1,0 +1,46 @@
+{
+    "name": "MsgReceiverGroup",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "desc",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "uucDepartmentTree",
+            "otherEntityRelationshipName": "msgReceiverGroup",
+            "relationshipName": "uucDepartmentTree"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "uucUserBaseinfo",
+            "otherEntityRelationshipName": "msgReceiverGroup",
+            "relationshipName": "uucUserBaseinfo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fmpSubCompany",
+            "otherEntityRelationshipName": "msgReceiverGroup",
+            "relationshipName": "fmpSubCompany",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408093900",
+    "entityTableName": "msg_receiver_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mp"
+}

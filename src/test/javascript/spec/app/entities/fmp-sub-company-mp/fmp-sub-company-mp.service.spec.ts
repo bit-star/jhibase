@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(FmpSubCompanyMpService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new FmpSubCompanyMp(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false);
+      elemDefault = new FmpSubCompanyMp(0);
     });
 
     describe('Service methods', () => {
@@ -52,17 +52,7 @@ describe('Service Tests', () => {
       });
 
       it('should update a FmpSubCompanyMp', () => {
-        const returnedFromService = Object.assign(
-          {
-            name: 'BBBBBB',
-            code: 'BBBBBB',
-            adminGroupId: 'BBBBBB',
-            ifPublic: 'BBBBBB',
-            styleId: 'BBBBBB',
-            isDeleted: true
-          },
-          elemDefault
-        );
+        const returnedFromService = Object.assign({}, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
 
@@ -74,17 +64,7 @@ describe('Service Tests', () => {
       });
 
       it('should return a list of FmpSubCompanyMp', () => {
-        const returnedFromService = Object.assign(
-          {
-            name: 'BBBBBB',
-            code: 'BBBBBB',
-            adminGroupId: 'BBBBBB',
-            ifPublic: 'BBBBBB',
-            styleId: 'BBBBBB',
-            isDeleted: true
-          },
-          elemDefault
-        );
+        const returnedFromService = Object.assign({}, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
 

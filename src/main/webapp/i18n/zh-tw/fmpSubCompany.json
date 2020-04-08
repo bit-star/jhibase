@@ -16,13 +16,8 @@
       "detail": {
         "title": "Fmp Sub Company"
       },
-      "name": "Name",
-      "code": "Code",
-      "adminGroupId": "Admin Group Id",
-      "ifPublic": "If Public",
-      "styleId": "Style Id",
-      "isDeleted": "Is Deleted",
-      "serviceWindow": "Service Window"
+      "msgReceiverGroup": "Msg Receiver Group",
+      "pushSubject": "Push Subject"
     }
   }
 }

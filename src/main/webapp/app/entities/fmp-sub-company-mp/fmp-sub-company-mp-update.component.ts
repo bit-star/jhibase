@@ -16,13 +16,7 @@ export class FmpSubCompanyMpUpdateComponent implements OnInit {
   isSaving = false;
 
   editForm = this.fb.group({
-    id: [],
-    name: [],
-    code: [],
-    adminGroupId: [],
-    ifPublic: [],
-    styleId: [],
-    isDeleted: []
+    id: []
   });
 
   constructor(protected fmpSubCompanyService: FmpSubCompanyMpService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -35,13 +29,7 @@ export class FmpSubCompanyMpUpdateComponent implements OnInit {
 
   updateForm(fmpSubCompany: IFmpSubCompanyMp): void {
     this.editForm.patchValue({
-      id: fmpSubCompany.id,
-      name: fmpSubCompany.name,
-      code: fmpSubCompany.code,
-      adminGroupId: fmpSubCompany.adminGroupId,
-      ifPublic: fmpSubCompany.ifPublic,
-      styleId: fmpSubCompany.styleId,
-      isDeleted: fmpSubCompany.isDeleted
+      id: fmpSubCompany.id
     });
   }
 
@@ -62,13 +50,7 @@ export class FmpSubCompanyMpUpdateComponent implements OnInit {
   private createFromForm(): IFmpSubCompanyMp {
     return {
       ...new FmpSubCompanyMp(),
-      id: this.editForm.get(['id'])!.value,
-      name: this.editForm.get(['name'])!.value,
-      code: this.editForm.get(['code'])!.value,
-      adminGroupId: this.editForm.get(['adminGroupId'])!.value,
-      ifPublic: this.editForm.get(['ifPublic'])!.value,
-      styleId: this.editForm.get(['styleId'])!.value,
-      isDeleted: this.editForm.get(['isDeleted'])!.value
+      id: this.editForm.get(['id'])!.value
     };
   }
 
