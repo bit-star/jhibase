@@ -1,0 +1,22 @@
+{
+  "jhibaseApp": {
+    "uucUserBaseinfo": {
+      "home": {
+        "title": "Uuc User Baseinfos",
+        "createLabel": "Create a new Uuc User Baseinfo",
+        "createOrEditLabel": "Create or edit a Uuc User Baseinfo",
+        "notFound": "No Uuc User Baseinfos found"
+      },
+      "created": "A new Uuc User Baseinfo is created with identifier {{ param }}",
+      "updated": "A Uuc User Baseinfo is updated with identifier {{ param }}",
+      "deleted": "A Uuc User Baseinfo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Uuc User Baseinfo {{ id }}?"
+      },
+      "detail": {
+        "title": "Uuc User Baseinfo"
+      },
+      "msgReceiverGroup": "Msg Receiver Group"
+    }
+  }
+}

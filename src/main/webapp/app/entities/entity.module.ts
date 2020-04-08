@@ -39,6 +39,22 @@ import { RouterModule } from '@angular/router';
       {
         path: 'service-window-mp',
         loadChildren: () => import('./service-window-mp/service-window-mp.module').then(m => m.JhibaseServiceWindowMpModule)
+      },
+      {
+        path: 'msg-receiver-group-mp',
+        loadChildren: () => import('./msg-receiver-group-mp/msg-receiver-group-mp.module').then(m => m.JhibaseMsgReceiverGroupMpModule)
+      },
+      {
+        path: 'uuc-department-tree-mp',
+        loadChildren: () => import('./uuc-department-tree-mp/uuc-department-tree-mp.module').then(m => m.JhibaseUucDepartmentTreeMpModule)
+      },
+      {
+        path: 'uuc-user-baseinfo-mp',
+        loadChildren: () => import('./uuc-user-baseinfo-mp/uuc-user-baseinfo-mp.module').then(m => m.JhibaseUucUserBaseinfoMpModule)
+      },
+      {
+        path: 'push-subject-mp',
+        loadChildren: () => import('./push-subject-mp/push-subject-mp.module').then(m => m.JhibasePushSubjectMpModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

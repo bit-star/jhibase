@@ -1,27 +1,12 @@
-import { IServiceWindowMp } from 'app/shared/model/service-window-mp.model';
+import { IMsgReceiverGroupMp } from 'app/shared/model/msg-receiver-group-mp.model';
+import { IPushSubjectMp } from 'app/shared/model/push-subject-mp.model';
 
 export interface IFmpSubCompanyMp {
   id?: number;
-  name?: string;
-  code?: string;
-  adminGroupId?: string;
-  ifPublic?: string;
-  styleId?: string;
-  isDeleted?: boolean;
-  serviceWindows?: IServiceWindowMp[];
+  msgReceiverGroups?: IMsgReceiverGroupMp[];
+  pushSubjects?: IPushSubjectMp[];
 }
 
 export class FmpSubCompanyMp implements IFmpSubCompanyMp {
-  constructor(
-    public id?: number,
-    public name?: string,
-    public code?: string,
-    public adminGroupId?: string,
-    public ifPublic?: string,
-    public styleId?: string,
-    public isDeleted?: boolean,
-    public serviceWindows?: IServiceWindowMp[]
-  ) {
-    this.isDeleted = this.isDeleted || false;
-  }
+  constructor(public id?: number, public msgReceiverGroups?: IMsgReceiverGroupMp[], public pushSubjects?: IPushSubjectMp[]) {}
 }

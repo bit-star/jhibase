@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.msgReceiverGroup.home.title">Msg Receiver Groups</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-msg-receiver-group-mp" [routerLink]="['/msg-receiver-group-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.msgReceiverGroup.home.createLabel">
+            Create a new Msg Receiver Group
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="msgReceiverGroups?.length === 0">
+        <span jhiTranslate="jhibaseApp.msgReceiverGroup.home.notFound">No msgReceiverGroups found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="msgReceiverGroups?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.desc">Desc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let msgReceiverGroup of msgReceiverGroups ;trackBy: trackId">
+                    <td><a [routerLink]="['/msg-receiver-group-mp', msgReceiverGroup.id, 'view']">{{ msgReceiverGroup.id }}</a></td>
+                    <td>{{ msgReceiverGroup.name }}</td>
+                    <td>{{ msgReceiverGroup.desc }}</td>
+                    <td>
+                        <div *ngIf="msgReceiverGroup.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', msgReceiverGroup.fmpSubCompany?.id, 'view']" >{{ msgReceiverGroup.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/msg-receiver-group-mp', msgReceiverGroup.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/msg-receiver-group-mp', msgReceiverGroup.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(msgReceiverGroup)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

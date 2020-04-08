@@ -16,6 +16,10 @@
         "locationFlat": "Location Flat",
         "fmpSubCompanyMp": "Fmp Sub Company",
         "serviceWindowMp": "Service Window",
+        "msgReceiverGroupMp": "Msg Receiver Group",
+        "uucDepartmentTreeMp": "Uuc Department Tree",
+        "uucUserBaseinfoMp": "Uuc User Baseinfo",
+        "pushSubjectMp": "Push Subject",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

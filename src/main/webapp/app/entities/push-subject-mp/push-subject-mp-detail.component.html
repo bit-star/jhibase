@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pushSubject">
+            <h2><span jhiTranslate="jhibaseApp.pushSubject.detail.title">Push Subject</span> {{ pushSubject.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.agentId">Agent Id</span></dt>
+                <dd>
+                    <span>{{ pushSubject.agentId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.name">Name</span></dt>
+                <dd>
+                    <span>{{ pushSubject.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.agentGroupId">Agent Group Id</span></dt>
+                <dd>
+                    <span>{{ pushSubject.agentGroupId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.titleColor">Title Color</span></dt>
+                <dd>
+                    <span>{{ pushSubject.titleColor }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.remark">Remark</span></dt>
+                <dd>
+                    <span>{{ pushSubject.remark }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.pushSubject.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="pushSubject.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', pushSubject.fmpSubCompany?.id, 'view']">{{ pushSubject.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/push-subject-mp', pushSubject.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

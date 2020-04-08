@@ -1,0 +1,22 @@
+{
+  "jhibaseApp": {
+    "uucDepartmentTree": {
+      "home": {
+        "title": "Uuc Department Trees",
+        "createLabel": "创建新 Uuc Department Tree",
+        "createOrEditLabel": "创建或编辑 Uuc Department Tree",
+        "notFound": "No Uuc Department Trees found"
+      },
+      "created": "Uuc Department Tree {{ param }} 创建成功",
+      "updated": "Uuc Department Tree {{ param }} 更新成功",
+      "deleted": "Uuc Department Tree {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Uuc Department Tree {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Uuc Department Tree"
+      },
+      "msgReceiverGroup": "Msg Receiver Group"
+    }
+  }
+}

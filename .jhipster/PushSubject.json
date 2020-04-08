@@ -1,0 +1,46 @@
+{
+    "name": "PushSubject",
+    "fields": [
+        {
+            "fieldName": "agentId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agentGroupId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titleColor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remark",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fmpSubCompany",
+            "otherEntityRelationshipName": "pushSubject",
+            "relationshipName": "fmpSubCompany",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200408094300",
+    "entityTableName": "push_subject",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mp"
+}

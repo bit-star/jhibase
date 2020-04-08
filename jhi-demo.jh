@@ -1,33 +1,43 @@
 
 
 
+entity MsgReceiverGroup{
+	name String,
+    desc String
+}
+
+
+entity UucDepartmentTree{
+}
+
+
+
+entity UucUserBaseinfo{
+}
+
 entity FmpSubCompany{
-	name String,
-    code String,
-    adminGroupId String,
-    ifPublic String,
-    styleId String,
-  	isDeleted Boolean 
 }
 
-entity ServiceWindow{
-	name String,
-    userId String,
-    link String,
-    icon String,
-    rank Integer,
-    remark String,
-    status Status
-}
 
-enum Status { 
- 	Available, Unavailable
+
+entity PushSubject { 
+ 	agentId Long,
+    name String,
+    agentGroupId String,
+    titleColor String,
+    remark String
 } 
 
 
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
-    FmpSubCompany to ServiceWindow
+    MsgReceiverGroup to UucDepartmentTree,
+    MsgReceiverGroup to UucUserBaseinfo,
+}
+
+relationship OneToMany {
+  FmpSubCompany to MsgReceiverGroup,
+  FmpSubCompany to PushSubject
 }
 
 

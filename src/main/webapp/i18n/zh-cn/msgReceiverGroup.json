@@ -1,0 +1,26 @@
+{
+  "jhibaseApp": {
+    "msgReceiverGroup": {
+      "home": {
+        "title": "Msg Receiver Groups",
+        "createLabel": "创建新 Msg Receiver Group",
+        "createOrEditLabel": "创建或编辑 Msg Receiver Group",
+        "notFound": "No Msg Receiver Groups found"
+      },
+      "created": "Msg Receiver Group {{ param }} 创建成功",
+      "updated": "Msg Receiver Group {{ param }} 更新成功",
+      "deleted": "Msg Receiver Group {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Msg Receiver Group {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Msg Receiver Group"
+      },
+      "name": "Name",
+      "desc": "Desc",
+      "uucDepartmentTree": "Uuc Department Tree",
+      "uucUserBaseinfo": "Uuc User Baseinfo",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

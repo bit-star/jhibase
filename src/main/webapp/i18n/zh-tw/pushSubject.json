@@ -1,0 +1,27 @@
+{
+  "jhibaseApp": {
+    "pushSubject": {
+      "home": {
+        "title": "Push Subjects",
+        "createLabel": "建立一筆新的 Push Subject",
+        "createOrEditLabel": "建立或編輯 Push Subject",
+        "notFound": "No Push Subjects found"
+      },
+      "created": "新的 Push Subject 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Push Subject 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Push Subject 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Push Subject {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Push Subject"
+      },
+      "agentId": "Agent Id",
+      "name": "Name",
+      "agentGroupId": "Agent Group Id",
+      "titleColor": "Title Color",
+      "remark": "Remark",
+      "fmpSubCompany": "Fmp Sub Company"
+    }
+  }
+}

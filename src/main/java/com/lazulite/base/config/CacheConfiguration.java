@@ -53,6 +53,14 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName());
             createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".serviceWindows");
             createCache(cm, com.lazulite.base.domain.ServiceWindow.class.getName());
+            createCache(cm, com.lazulite.base.domain.MsgReceiverGroup.class.getName());
+            createCache(cm, com.lazulite.base.domain.MsgReceiverGroup.class.getName() + ".uucDepartmentTrees");
+            createCache(cm, com.lazulite.base.domain.MsgReceiverGroup.class.getName() + ".uucUserBaseinfos");
+            createCache(cm, com.lazulite.base.domain.UucDepartmentTree.class.getName());
+            createCache(cm, com.lazulite.base.domain.UucUserBaseinfo.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".msgReceiverGroups");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".pushSubjects");
+            createCache(cm, com.lazulite.base.domain.PushSubject.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

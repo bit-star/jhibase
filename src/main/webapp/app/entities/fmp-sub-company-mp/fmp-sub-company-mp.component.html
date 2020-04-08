@@ -23,24 +23,12 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.name">Name</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.code">Code</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.adminGroupId">Admin Group Id</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.ifPublic">If Public</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.styleId">Style Id</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.isDeleted">Is Deleted</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let fmpSubCompany of fmpSubCompanies ;trackBy: trackId">
                     <td><a [routerLink]="['/fmp-sub-company-mp', fmpSubCompany.id, 'view']">{{ fmpSubCompany.id }}</a></td>
-                    <td>{{ fmpSubCompany.name }}</td>
-                    <td>{{ fmpSubCompany.code }}</td>
-                    <td>{{ fmpSubCompany.adminGroupId }}</td>
-                    <td>{{ fmpSubCompany.ifPublic }}</td>
-                    <td>{{ fmpSubCompany.styleId }}</td>
-                    <td>{{ fmpSubCompany.isDeleted }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
