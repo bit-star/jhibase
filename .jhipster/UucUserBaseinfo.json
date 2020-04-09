@@ -3,11 +3,12 @@
     "fields": [],
     "relationships": [
         {
-            "relationshipType": "many-to-one",
+            "relationshipType": "many-to-many",
             "otherEntityName": "msgReceiverGroup",
             "otherEntityRelationshipName": "uucUserBaseinfo",
             "relationshipName": "msgReceiverGroup",
-            "otherEntityField": "id"
+            "otherEntityField": "id",
+            "ownerSide": false
         }
     ],
     "changelogDate": "20200408094100",

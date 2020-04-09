@@ -5,6 +5,8 @@ import com.lazulite.base.repository.MsgReceiverGroupRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,7 +47,16 @@ public class MsgReceiverGroupService {
     @Transactional(readOnly = true)
     public List<MsgReceiverGroup> findAll() {
         log.debug("Request to get all MsgReceiverGroups");
-        return msgReceiverGroupRepository.findAll();
+        return msgReceiverGroupRepository.findAllWithEagerRelationships();
+    }
+
+    /**
+     * Get all the msgReceiverGroups with eager load of many-to-many relationships.
+     *
+     * @return the list of entities.
+     */
+    public Page<MsgReceiverGroup> findAllWithEagerRelationships(Pageable pageable) {
+        return msgReceiverGroupRepository.findAllWithEagerRelationships(pageable);
     }
 
     /**
@@ -57,7 +68,7 @@ public class MsgReceiverGroupService {
     @Transactional(readOnly = true)
     public Optional<MsgReceiverGroup> findOne(Long id) {
         log.debug("Request to get MsgReceiverGroup : {}", id);
-        return msgReceiverGroupRepository.findById(id);
+        return msgReceiverGroupRepository.findOneWithEagerRelationships(id);
     }
 
     /**

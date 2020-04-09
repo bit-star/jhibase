@@ -1,6 +1,6 @@
 package com.lazulite.base.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,6 +8,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A UucUserBaseinfo.
@@ -23,9 +25,10 @@ public class UucUserBaseinfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JsonIgnoreProperties("uucUserBaseinfos")
-    private MsgReceiverGroup msgReceiverGroup;
+    @ManyToMany(mappedBy = "uucUserBaseinfos")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JsonIgnore
+    private Set<MsgReceiverGroup> msgReceiverGroups = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -36,17 +39,29 @@ public class UucUserBaseinfo implements Serializable {
         this.id = id;
     }
 
-    public MsgReceiverGroup getMsgReceiverGroup() {
-        return msgReceiverGroup;
+    public Set<MsgReceiverGroup> getMsgReceiverGroups() {
+        return msgReceiverGroups;
     }
 
-    public UucUserBaseinfo msgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
-        this.msgReceiverGroup = msgReceiverGroup;
+    public UucUserBaseinfo msgReceiverGroups(Set<MsgReceiverGroup> msgReceiverGroups) {
+        this.msgReceiverGroups = msgReceiverGroups;
         return this;
     }
 
-    public void setMsgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
-        this.msgReceiverGroup = msgReceiverGroup;
+    public UucUserBaseinfo addMsgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
+        this.msgReceiverGroups.add(msgReceiverGroup);
+        msgReceiverGroup.getUucUserBaseinfos().add(this);
+        return this;
+    }
+
+    public UucUserBaseinfo removeMsgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
+        this.msgReceiverGroups.remove(msgReceiverGroup);
+        msgReceiverGroup.getUucUserBaseinfos().remove(this);
+        return this;
+    }
+
+    public void setMsgReceiverGroups(Set<MsgReceiverGroup> msgReceiverGroups) {
+        this.msgReceiverGroups = msgReceiverGroups;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

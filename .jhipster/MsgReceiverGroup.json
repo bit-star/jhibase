@@ -12,16 +12,20 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-many",
             "otherEntityName": "uucDepartmentTree",
             "otherEntityRelationshipName": "msgReceiverGroup",
-            "relationshipName": "uucDepartmentTree"
+            "relationshipName": "uucDepartmentTree",
+            "otherEntityField": "id",
+            "ownerSide": true
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-many",
             "otherEntityName": "uucUserBaseinfo",
             "otherEntityRelationshipName": "msgReceiverGroup",
-            "relationshipName": "uucUserBaseinfo"
+            "relationshipName": "uucUserBaseinfo",
+            "otherEntityField": "id",
+            "ownerSide": true
         },
         {
             "relationshipType": "many-to-one",

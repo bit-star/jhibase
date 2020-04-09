@@ -30,7 +30,7 @@ entity PushSubject {
 
 
 // defining multiple OneToMany relationships with comments
-relationship OneToMany {
+relationship ManyToMany {
     MsgReceiverGroup to UucDepartmentTree,
     MsgReceiverGroup to UucUserBaseinfo,
 }

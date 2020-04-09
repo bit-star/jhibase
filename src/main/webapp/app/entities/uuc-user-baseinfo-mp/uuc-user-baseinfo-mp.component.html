@@ -23,18 +23,12 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.uucUserBaseinfo.msgReceiverGroup">Msg Receiver Group</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let uucUserBaseinfo of uucUserBaseinfos ;trackBy: trackId">
                     <td><a [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo.id, 'view']">{{ uucUserBaseinfo.id }}</a></td>
-                    <td>
-                        <div *ngIf="uucUserBaseinfo.msgReceiverGroup">
-                            <a [routerLink]="['/msg-receiver-group-mp', uucUserBaseinfo.msgReceiverGroup?.id, 'view']" >{{ uucUserBaseinfo.msgReceiverGroup?.id }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

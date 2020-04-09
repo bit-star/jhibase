@@ -10,14 +10,6 @@
                     <label for="id" jhiTranslate="global.field.id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhibaseApp.uucDepartmentTree.msgReceiverGroup" for="field_msgReceiverGroup">Msg Receiver Group</label>
-                    <select class="form-control" id="field_msgReceiverGroup" name="msgReceiverGroup" formControlName="msgReceiverGroup">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="msgReceiverGroupOption.id === editForm.get('msgReceiverGroup')!.value?.id ? editForm.get('msgReceiverGroup')!.value : msgReceiverGroupOption" *ngFor="let msgReceiverGroupOption of msgreceivergroups; trackBy: trackById">{{ msgReceiverGroupOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

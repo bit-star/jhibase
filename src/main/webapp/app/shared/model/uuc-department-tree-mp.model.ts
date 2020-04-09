@@ -2,9 +2,9 @@ import { IMsgReceiverGroupMp } from 'app/shared/model/msg-receiver-group-mp.mode
 
 export interface IUucDepartmentTreeMp {
   id?: number;
-  msgReceiverGroup?: IMsgReceiverGroupMp;
+  msgReceiverGroups?: IMsgReceiverGroupMp[];
 }
 
 export class UucDepartmentTreeMp implements IUucDepartmentTreeMp {
-  constructor(public id?: number, public msgReceiverGroup?: IMsgReceiverGroupMp) {}
+  constructor(public id?: number, public msgReceiverGroups?: IMsgReceiverGroupMp[]) {}
 }
