@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { IUucDepartmentTreeMp, UucDepartmentTreeMp } from 'app/shared/model/uuc-department-tree-mp.model';
 import { UucDepartmentTreeMpService } from './uuc-department-tree-mp.service';
-import { IMsgReceiverGroupMp } from 'app/shared/model/msg-receiver-group-mp.model';
-import { MsgReceiverGroupMpService } from 'app/entities/msg-receiver-group-mp/msg-receiver-group-mp.service';
 
 @Component({
   selector: 'jhi-uuc-department-tree-mp-update',
@@ -16,16 +14,13 @@ import { MsgReceiverGroupMpService } from 'app/entities/msg-receiver-group-mp/ms
 })
 export class UucDepartmentTreeMpUpdateComponent implements OnInit {
   isSaving = false;
-  msgreceivergroups: IMsgReceiverGroupMp[] = [];
 
   editForm = this.fb.group({
-    id: [],
-    msgReceiverGroup: []
+    id: []
   });
 
   constructor(
     protected uucDepartmentTreeService: UucDepartmentTreeMpService,
-    protected msgReceiverGroupService: MsgReceiverGroupMpService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -33,17 +28,12 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ uucDepartmentTree }) => {
       this.updateForm(uucDepartmentTree);
-
-      this.msgReceiverGroupService
-        .query()
-        .subscribe((res: HttpResponse<IMsgReceiverGroupMp[]>) => (this.msgreceivergroups = res.body || []));
     });
   }
 
   updateForm(uucDepartmentTree: IUucDepartmentTreeMp): void {
     this.editForm.patchValue({
-      id: uucDepartmentTree.id,
-      msgReceiverGroup: uucDepartmentTree.msgReceiverGroup
+      id: uucDepartmentTree.id
     });
   }
 
@@ -64,8 +54,7 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
   private createFromForm(): IUucDepartmentTreeMp {
     return {
       ...new UucDepartmentTreeMp(),
-      id: this.editForm.get(['id'])!.value,
-      msgReceiverGroup: this.editForm.get(['msgReceiverGroup'])!.value
+      id: this.editForm.get(['id'])!.value
     };
   }
 
@@ -83,9 +72,5 @@ export class UucDepartmentTreeMpUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: IMsgReceiverGroupMp): any {
-    return item.id;
   }
 }

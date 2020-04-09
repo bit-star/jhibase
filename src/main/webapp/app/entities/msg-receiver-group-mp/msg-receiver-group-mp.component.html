@@ -25,6 +25,8 @@
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.name">Name</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.desc">Desc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.uucDepartmentTree">Uuc Department Tree</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.uucUserBaseinfo">Uuc User Baseinfo</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.msgReceiverGroup.fmpSubCompany">Fmp Sub Company</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -34,6 +36,16 @@
                     <td><a [routerLink]="['/msg-receiver-group-mp', msgReceiverGroup.id, 'view']">{{ msgReceiverGroup.id }}</a></td>
                     <td>{{ msgReceiverGroup.name }}</td>
                     <td>{{ msgReceiverGroup.desc }}</td>
+                    <td>
+                        <span *ngFor="let uucDepartmentTree of msgReceiverGroup.uucDepartmentTrees; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree?.id, 'view']">{{ uucDepartmentTree.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let uucUserBaseinfo of msgReceiverGroup.uucUserBaseinfos; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo?.id, 'view']">{{ uucUserBaseinfo.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
                     <td>
                         <div *ngIf="msgReceiverGroup.fmpSubCompany">
                             <a [routerLink]="['/fmp-sub-company-mp', msgReceiverGroup.fmpSubCompany?.id, 'view']" >{{ msgReceiverGroup.fmpSubCompany?.id }}</a>

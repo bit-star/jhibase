@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { IUucUserBaseinfoMp, UucUserBaseinfoMp } from 'app/shared/model/uuc-user-baseinfo-mp.model';
 import { UucUserBaseinfoMpService } from './uuc-user-baseinfo-mp.service';
-import { IMsgReceiverGroupMp } from 'app/shared/model/msg-receiver-group-mp.model';
-import { MsgReceiverGroupMpService } from 'app/entities/msg-receiver-group-mp/msg-receiver-group-mp.service';
 
 @Component({
   selector: 'jhi-uuc-user-baseinfo-mp-update',
@@ -16,16 +14,13 @@ import { MsgReceiverGroupMpService } from 'app/entities/msg-receiver-group-mp/ms
 })
 export class UucUserBaseinfoMpUpdateComponent implements OnInit {
   isSaving = false;
-  msgreceivergroups: IMsgReceiverGroupMp[] = [];
 
   editForm = this.fb.group({
-    id: [],
-    msgReceiverGroup: []
+    id: []
   });
 
   constructor(
     protected uucUserBaseinfoService: UucUserBaseinfoMpService,
-    protected msgReceiverGroupService: MsgReceiverGroupMpService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -33,17 +28,12 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ uucUserBaseinfo }) => {
       this.updateForm(uucUserBaseinfo);
-
-      this.msgReceiverGroupService
-        .query()
-        .subscribe((res: HttpResponse<IMsgReceiverGroupMp[]>) => (this.msgreceivergroups = res.body || []));
     });
   }
 
   updateForm(uucUserBaseinfo: IUucUserBaseinfoMp): void {
     this.editForm.patchValue({
-      id: uucUserBaseinfo.id,
-      msgReceiverGroup: uucUserBaseinfo.msgReceiverGroup
+      id: uucUserBaseinfo.id
     });
   }
 
@@ -64,8 +54,7 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
   private createFromForm(): IUucUserBaseinfoMp {
     return {
       ...new UucUserBaseinfoMp(),
-      id: this.editForm.get(['id'])!.value,
-      msgReceiverGroup: this.editForm.get(['msgReceiverGroup'])!.value
+      id: this.editForm.get(['id'])!.value
     };
   }
 
@@ -83,9 +72,5 @@ export class UucUserBaseinfoMpUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: IMsgReceiverGroupMp): any {
-    return item.id;
   }
 }

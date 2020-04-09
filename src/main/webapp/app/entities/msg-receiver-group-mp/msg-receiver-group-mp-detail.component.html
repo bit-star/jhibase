@@ -16,6 +16,18 @@
                 <dd>
                     <span>{{ msgReceiverGroup.desc }}</span>
                 </dd>
+                <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.uucDepartmentTree">Uuc Department Tree</span></dt>
+                <dd>
+                    <span *ngFor="let uucDepartmentTree of msgReceiverGroup.uucDepartmentTrees; let last = last">
+                        <a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTree?.id, 'view']">{{ uucDepartmentTree.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.uucUserBaseinfo">Uuc User Baseinfo</span></dt>
+                <dd>
+                    <span *ngFor="let uucUserBaseinfo of msgReceiverGroup.uucUserBaseinfos; let last = last">
+                        <a [routerLink]="['/uuc-user-baseinfo-mp', uucUserBaseinfo?.id, 'view']">{{ uucUserBaseinfo.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
                 <dt><span jhiTranslate="jhibaseApp.msgReceiverGroup.fmpSubCompany">Fmp Sub Company</span></dt>
                 <dd>
                     <div *ngIf="msgReceiverGroup.fmpSubCompany">

@@ -80,10 +80,11 @@ public class MsgReceiverGroupResource {
     /**
      * {@code GET  /msg-receiver-groups} : get all the msgReceiverGroups.
      *
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of msgReceiverGroups in body.
      */
     @GetMapping("/msg-receiver-groups")
-    public List<MsgReceiverGroup> getAllMsgReceiverGroups() {
+    public List<MsgReceiverGroup> getAllMsgReceiverGroups(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all MsgReceiverGroups");
         return msgReceiverGroupService.findAll();
     }

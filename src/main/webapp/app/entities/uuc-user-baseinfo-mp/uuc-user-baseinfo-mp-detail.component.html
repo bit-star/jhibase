@@ -8,12 +8,6 @@
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="jhibaseApp.uucUserBaseinfo.msgReceiverGroup">Msg Receiver Group</span></dt>
-                <dd>
-                    <div *ngIf="uucUserBaseinfo.msgReceiverGroup">
-                        <a [routerLink]="['/msg-receiver-group-mp', uucUserBaseinfo.msgReceiverGroup?.id, 'view']">{{ uucUserBaseinfo.msgReceiverGroup?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

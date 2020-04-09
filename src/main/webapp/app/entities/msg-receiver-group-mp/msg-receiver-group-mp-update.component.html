@@ -24,6 +24,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label jhiTranslate="jhibaseApp.msgReceiverGroup.uucDepartmentTree" for="field_uucDepartmentTrees">Uuc Department Tree</label>
+                    <select class="form-control" id="field_uucDepartmentTrees" multiple name="uucDepartmentTrees" formControlName="uucDepartmentTrees">
+                        <option [ngValue]="getSelected(editForm.get('uucDepartmentTrees')!.value, uucDepartmentTreeOption)" *ngFor="let uucDepartmentTreeOption of uucdepartmenttrees; trackBy: trackById">{{ uucDepartmentTreeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhibaseApp.msgReceiverGroup.uucUserBaseinfo" for="field_uucUserBaseinfos">Uuc User Baseinfo</label>
+                    <select class="form-control" id="field_uucUserBaseinfos" multiple name="uucUserBaseinfos" formControlName="uucUserBaseinfos">
+                        <option [ngValue]="getSelected(editForm.get('uucUserBaseinfos')!.value, uucUserBaseinfoOption)" *ngFor="let uucUserBaseinfoOption of uucuserbaseinfos; trackBy: trackById">{{ uucUserBaseinfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhibaseApp.msgReceiverGroup.fmpSubCompany" for="field_fmpSubCompany">Fmp Sub Company</label>
                     <select class="form-control" id="field_fmpSubCompany" name="fmpSubCompany" formControlName="fmpSubCompany">
                         <option [ngValue]="null"></option>

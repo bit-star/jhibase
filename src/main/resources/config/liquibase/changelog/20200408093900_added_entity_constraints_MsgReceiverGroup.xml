@@ -8,6 +8,30 @@
     -->
     <changeSet id="20200408093900-2" author="jhipster">
         
+        <addForeignKeyConstraint baseColumnNames="msg_receiver_group_id"
+                                 baseTableName="msg_receiver_group_uuc_department_tree"
+                                 constraintName="fk_msg_receiver_group_uuc_department_tree_msg_receiver_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="msg_receiver_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_department_tree_id"
+                                 baseTableName="msg_receiver_group_uuc_department_tree"
+                                 constraintName="msg_receiver_group_uuc_departme_uuc_department_tree_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_department_tree"/>
+        
+        <addForeignKeyConstraint baseColumnNames="msg_receiver_group_id"
+                                 baseTableName="msg_receiver_group_uuc_user_baseinfo"
+                                 constraintName="fk_msg_receiver_group_uuc_user_baseinfo_msg_receiver_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="msg_receiver_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_user_baseinfo_id"
+                                 baseTableName="msg_receiver_group_uuc_user_baseinfo"
+                                 constraintName="fk_msg_receiver_group_uuc_user_baseinfo_uuc_user_baseinfo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_user_baseinfo"/>
+        
         <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
                                  baseTableName="msg_receiver_group"
                                  constraintName="fk_msg_receiver_group_fmp_sub_company_id"

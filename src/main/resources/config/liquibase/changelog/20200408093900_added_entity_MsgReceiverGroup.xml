@@ -31,6 +31,28 @@
 
     <changeSet id="20200408093900-1-relations" author="jhipster">
 
+        <createTable tableName="msg_receiver_group_uuc_department_tree">
+            <column name="uuc_department_tree_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="msg_receiver_group_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="msg_receiver_group_id, uuc_department_tree_id" tableName="msg_receiver_group_uuc_department_tree"/>
+        
+        <createTable tableName="msg_receiver_group_uuc_user_baseinfo">
+            <column name="uuc_user_baseinfo_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="msg_receiver_group_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="msg_receiver_group_id, uuc_user_baseinfo_id" tableName="msg_receiver_group_uuc_user_baseinfo"/>
+        
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 

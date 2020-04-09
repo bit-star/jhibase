@@ -31,12 +31,18 @@ public class MsgReceiverGroup implements Serializable {
     @Column(name = "jhi_desc")
     private String desc;
 
-    @OneToMany(mappedBy = "msgReceiverGroup")
+    @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "msg_receiver_group_uuc_department_tree",
+               joinColumns = @JoinColumn(name = "msg_receiver_group_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "uuc_department_tree_id", referencedColumnName = "id"))
     private Set<UucDepartmentTree> uucDepartmentTrees = new HashSet<>();
 
-    @OneToMany(mappedBy = "msgReceiverGroup")
+    @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "msg_receiver_group_uuc_user_baseinfo",
+               joinColumns = @JoinColumn(name = "msg_receiver_group_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "uuc_user_baseinfo_id", referencedColumnName = "id"))
     private Set<UucUserBaseinfo> uucUserBaseinfos = new HashSet<>();
 
     @ManyToOne
@@ -89,13 +95,13 @@ public class MsgReceiverGroup implements Serializable {
 
     public MsgReceiverGroup addUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
         this.uucDepartmentTrees.add(uucDepartmentTree);
-        uucDepartmentTree.setMsgReceiverGroup(this);
+        uucDepartmentTree.getMsgReceiverGroups().add(this);
         return this;
     }
 
     public MsgReceiverGroup removeUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
         this.uucDepartmentTrees.remove(uucDepartmentTree);
-        uucDepartmentTree.setMsgReceiverGroup(null);
+        uucDepartmentTree.getMsgReceiverGroups().remove(this);
         return this;
     }
 
@@ -114,13 +120,13 @@ public class MsgReceiverGroup implements Serializable {
 
     public MsgReceiverGroup addUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
         this.uucUserBaseinfos.add(uucUserBaseinfo);
-        uucUserBaseinfo.setMsgReceiverGroup(this);
+        uucUserBaseinfo.getMsgReceiverGroups().add(this);
         return this;
     }
 
     public MsgReceiverGroup removeUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
         this.uucUserBaseinfos.remove(uucUserBaseinfo);
-        uucUserBaseinfo.setMsgReceiverGroup(null);
+        uucUserBaseinfo.getMsgReceiverGroups().remove(this);
         return this;
     }
 
