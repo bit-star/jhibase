@@ -18,6 +18,9 @@ entity UucUserBaseinfo{
 entity FmpSubCompany{
 }
 
+entity ProcessMsgTask{
+}
+
 
 
 entity PushSubject { 
@@ -37,7 +40,8 @@ relationship ManyToMany {
 
 relationship OneToMany {
   FmpSubCompany to MsgReceiverGroup,
-  FmpSubCompany to PushSubject
+  FmpSubCompany to PushSubject,
+  PushSubject to ProcessMsgTask
 }
 
 
