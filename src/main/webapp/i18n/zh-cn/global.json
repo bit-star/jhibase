@@ -20,6 +20,7 @@
         "uucDepartmentTreeMp": "Uuc Department Tree",
         "uucUserBaseinfoMp": "Uuc User Baseinfo",
         "pushSubjectMp": "Push Subject",
+        "processMsgTaskMp": "Process Msg Task",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

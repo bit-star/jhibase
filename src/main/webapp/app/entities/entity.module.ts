@@ -55,6 +55,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'push-subject-mp',
         loadChildren: () => import('./push-subject-mp/push-subject-mp.module').then(m => m.JhibasePushSubjectMpModule)
+      },
+      {
+        path: 'process-msg-task-mp',
+        loadChildren: () => import('./process-msg-task-mp/process-msg-task-mp.module').then(m => m.JhibaseProcessMsgTaskMpModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

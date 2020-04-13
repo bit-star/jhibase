@@ -21,6 +21,7 @@
       "agentGroupId": "Agent Group Id",
       "titleColor": "Title Color",
       "remark": "Remark",
+      "processMsgTask": "Process Msg Task",
       "fmpSubCompany": "Fmp Sub Company"
     }
   }
