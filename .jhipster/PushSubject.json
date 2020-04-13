@@ -24,6 +24,12 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "processMsgTask",
+            "otherEntityRelationshipName": "pushSubject",
+            "relationshipName": "processMsgTask"
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "fmpSubCompany",
             "otherEntityRelationshipName": "pushSubject",

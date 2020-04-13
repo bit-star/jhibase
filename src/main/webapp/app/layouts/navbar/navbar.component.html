@@ -105,6 +105,12 @@
                             <span jhiTranslate="global.menu.entities.pushSubjectMp">Push Subject Mp</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="process-msg-task-mp" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.processMsgTaskMp">Process Msg Task Mp</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

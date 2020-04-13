@@ -8,6 +8,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A PushSubject.
@@ -37,6 +39,10 @@ public class PushSubject implements Serializable {
 
     @Column(name = "remark")
     private String remark;
+
+    @OneToMany(mappedBy = "pushSubject")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<ProcessMsgTask> processMsgTasks = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("pushSubjects")
@@ -114,6 +120,31 @@ public class PushSubject implements Serializable {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Set<ProcessMsgTask> getProcessMsgTasks() {
+        return processMsgTasks;
+    }
+
+    public PushSubject processMsgTasks(Set<ProcessMsgTask> processMsgTasks) {
+        this.processMsgTasks = processMsgTasks;
+        return this;
+    }
+
+    public PushSubject addProcessMsgTask(ProcessMsgTask processMsgTask) {
+        this.processMsgTasks.add(processMsgTask);
+        processMsgTask.setPushSubject(this);
+        return this;
+    }
+
+    public PushSubject removeProcessMsgTask(ProcessMsgTask processMsgTask) {
+        this.processMsgTasks.remove(processMsgTask);
+        processMsgTask.setPushSubject(null);
+        return this;
+    }
+
+    public void setProcessMsgTasks(Set<ProcessMsgTask> processMsgTasks) {
+        this.processMsgTasks = processMsgTasks;
     }
 
     public FmpSubCompany getFmpSubCompany() {
