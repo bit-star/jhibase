@@ -18,17 +18,19 @@
         <span jhiTranslate="jhibaseApp.fmpSubCompany.home.notFound">No fmpSubCompanies found</span>
     </div>
 
-    <div class="table-responsive" id="entities" *ngIf="fmpSubCompanies?.length > 0">
+    <div class="table-responsive" id="entities" *ngIf="fmpSubCompanies && fmpSubCompanies.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpSubCompany.moreTodoUrl">More Todo Url</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let fmpSubCompany of fmpSubCompanies ;trackBy: trackId">
                     <td><a [routerLink]="['/fmp-sub-company-mp', fmpSubCompany.id, 'view']">{{ fmpSubCompany.id }}</a></td>
+                    <td>{{ fmpSubCompany.moreTodoUrl }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

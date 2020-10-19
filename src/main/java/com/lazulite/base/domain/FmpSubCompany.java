@@ -6,7 +6,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "fmp_sub_company")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class FmpSubCompany implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,15 +23,14 @@ public class FmpSubCompany implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "fmpSubCompany")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<MsgReceiverGroup> msgReceiverGroups = new HashSet<>();
+    @Column(name = "more_todo_url")
+    private String moreTodoUrl;
 
     @OneToMany(mappedBy = "fmpSubCompany")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<PushSubject> pushSubjects = new HashSet<>();
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<MpHotspot> mpHotspots = new HashSet<>();
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
     }
@@ -41,56 +39,44 @@ public class FmpSubCompany implements Serializable {
         this.id = id;
     }
 
-    public Set<MsgReceiverGroup> getMsgReceiverGroups() {
-        return msgReceiverGroups;
+    public String getMoreTodoUrl() {
+        return moreTodoUrl;
     }
 
-    public FmpSubCompany msgReceiverGroups(Set<MsgReceiverGroup> msgReceiverGroups) {
-        this.msgReceiverGroups = msgReceiverGroups;
+    public FmpSubCompany moreTodoUrl(String moreTodoUrl) {
+        this.moreTodoUrl = moreTodoUrl;
         return this;
     }
 
-    public FmpSubCompany addMsgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
-        this.msgReceiverGroups.add(msgReceiverGroup);
-        msgReceiverGroup.setFmpSubCompany(this);
+    public void setMoreTodoUrl(String moreTodoUrl) {
+        this.moreTodoUrl = moreTodoUrl;
+    }
+
+    public Set<MpHotspot> getMpHotspots() {
+        return mpHotspots;
+    }
+
+    public FmpSubCompany mpHotspots(Set<MpHotspot> mpHotspots) {
+        this.mpHotspots = mpHotspots;
         return this;
     }
 
-    public FmpSubCompany removeMsgReceiverGroup(MsgReceiverGroup msgReceiverGroup) {
-        this.msgReceiverGroups.remove(msgReceiverGroup);
-        msgReceiverGroup.setFmpSubCompany(null);
+    public FmpSubCompany addMpHotspot(MpHotspot mpHotspot) {
+        this.mpHotspots.add(mpHotspot);
+        mpHotspot.setFmpSubCompany(this);
         return this;
     }
 
-    public void setMsgReceiverGroups(Set<MsgReceiverGroup> msgReceiverGroups) {
-        this.msgReceiverGroups = msgReceiverGroups;
-    }
-
-    public Set<PushSubject> getPushSubjects() {
-        return pushSubjects;
-    }
-
-    public FmpSubCompany pushSubjects(Set<PushSubject> pushSubjects) {
-        this.pushSubjects = pushSubjects;
+    public FmpSubCompany removeMpHotspot(MpHotspot mpHotspot) {
+        this.mpHotspots.remove(mpHotspot);
+        mpHotspot.setFmpSubCompany(null);
         return this;
     }
 
-    public FmpSubCompany addPushSubject(PushSubject pushSubject) {
-        this.pushSubjects.add(pushSubject);
-        pushSubject.setFmpSubCompany(this);
-        return this;
+    public void setMpHotspots(Set<MpHotspot> mpHotspots) {
+        this.mpHotspots = mpHotspots;
     }
-
-    public FmpSubCompany removePushSubject(PushSubject pushSubject) {
-        this.pushSubjects.remove(pushSubject);
-        pushSubject.setFmpSubCompany(null);
-        return this;
-    }
-
-    public void setPushSubjects(Set<PushSubject> pushSubjects) {
-        this.pushSubjects = pushSubjects;
-    }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
@@ -108,10 +94,12 @@ public class FmpSubCompany implements Serializable {
         return 31;
     }
 
+    // prettier-ignore
     @Override
     public String toString() {
         return "FmpSubCompany{" +
             "id=" + getId() +
+            ", moreTodoUrl='" + getMoreTodoUrl() + "'" +
             "}";
     }
 }
