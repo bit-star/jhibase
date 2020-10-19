@@ -27,7 +27,7 @@ export class MpHotspotMpUpdateComponent implements OnInit {
     pathUrl: [],
     addTime: [],
     orderNum: [],
-    remark: [],
+    note: [],
     fmpSubCompany: [],
   });
 
@@ -59,7 +59,7 @@ export class MpHotspotMpUpdateComponent implements OnInit {
       pathUrl: mpHotspot.pathUrl,
       addTime: mpHotspot.addTime ? mpHotspot.addTime.format(DATE_TIME_FORMAT) : null,
       orderNum: mpHotspot.orderNum,
-      remark: mpHotspot.remark,
+      note: mpHotspot.note,
       fmpSubCompany: mpHotspot.fmpSubCompany,
     });
   }
@@ -87,7 +87,7 @@ export class MpHotspotMpUpdateComponent implements OnInit {
       pathUrl: this.editForm.get(['pathUrl'])!.value,
       addTime: this.editForm.get(['addTime'])!.value ? moment(this.editForm.get(['addTime'])!.value, DATE_TIME_FORMAT) : undefined,
       orderNum: this.editForm.get(['orderNum'])!.value,
-      remark: this.editForm.get(['remark'])!.value,
+      note: this.editForm.get(['note'])!.value,
       fmpSubCompany: this.editForm.get(['fmpSubCompany'])!.value,
     };
   }

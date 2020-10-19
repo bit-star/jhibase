@@ -28,7 +28,7 @@
                     <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.pathUrl">Path Url</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.addTime">Add Time</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.orderNum">Order Num</span></th>
-                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.remark">Remark</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.note">Note</span></th>
                     <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.fmpSubCompany">Fmp Sub Company</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -41,7 +41,7 @@
                     <td>{{ mpHotspot.pathUrl }}</td>
                     <td>{{ mpHotspot.addTime | date:'medium' }}</td>
                     <td>{{ mpHotspot.orderNum }}</td>
-                    <td>{{ mpHotspot.remark }}</td>
+                    <td>{{ mpHotspot.note }}</td>
                     <td>
                         <div *ngIf="mpHotspot.fmpSubCompany">
                             <a [routerLink]="['/fmp-sub-company-mp', mpHotspot.fmpSubCompany?.id, 'view']" >{{ mpHotspot.fmpSubCompany?.id }}</a>

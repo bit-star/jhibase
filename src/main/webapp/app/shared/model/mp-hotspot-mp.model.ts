@@ -8,7 +8,7 @@ export interface IMpHotspotMp {
   pathUrl?: string;
   addTime?: Moment;
   orderNum?: number;
-  remark?: string;
+  note?: string;
   fmpSubCompany?: IFmpSubCompanyMp;
 }
 
@@ -20,7 +20,7 @@ export class MpHotspotMp implements IMpHotspotMp {
     public pathUrl?: string,
     public addTime?: Moment,
     public orderNum?: number,
-    public remark?: string,
+    public note?: string,
     public fmpSubCompany?: IFmpSubCompanyMp
   ) {}
 }

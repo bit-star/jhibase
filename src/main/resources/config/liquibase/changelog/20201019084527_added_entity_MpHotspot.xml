@@ -31,7 +31,7 @@
             <column name="order_num" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="remark" type="varchar(255)">
+            <column name="note" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="fmp_sub_company_id" type="bigint">
@@ -66,7 +66,7 @@
             <column name="path_url" type="string"/>
             <column name="add_time" type="datetime"/>
             <column name="order_num" type="numeric"/>
-            <column name="remark" type="string"/>
+            <column name="note" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
