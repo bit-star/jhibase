@@ -12,7 +12,7 @@ entity MpHotspot{
 
 	orderNum Long,
   
-	remark String
+	note String
 }
 
 entity FmpSubCompany{
@@ -24,7 +24,7 @@ entity FmpSubCompany{
 
 
 relationship OneToMany {
-  FmpSubCompany to MpHotspot,
+  FmpSubCompany to MpHotspot
 }
 
 
