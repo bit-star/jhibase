@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.mpHotspot.home.title">Mp Hotspots</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-mp-hotspot-mp" [routerLink]="['/mp-hotspot-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.mpHotspot.home.createLabel">
+            Create a new Mp Hotspot
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="mpHotspots?.length === 0">
+        <span jhiTranslate="jhibaseApp.mpHotspot.home.notFound">No mpHotspots found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="mpHotspots && mpHotspots.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.imageUrl">Image Url</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.pathUrl">Path Url</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.addTime">Add Time</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.orderNum">Order Num</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.remark">Remark</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.mpHotspot.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mpHotspot of mpHotspots ;trackBy: trackId">
+                    <td><a [routerLink]="['/mp-hotspot-mp', mpHotspot.id, 'view']">{{ mpHotspot.id }}</a></td>
+                    <td>{{ mpHotspot.name }}</td>
+                    <td>{{ mpHotspot.imageUrl }}</td>
+                    <td>{{ mpHotspot.pathUrl }}</td>
+                    <td>{{ mpHotspot.addTime | date:'medium' }}</td>
+                    <td>{{ mpHotspot.orderNum }}</td>
+                    <td>{{ mpHotspot.remark }}</td>
+                    <td>
+                        <div *ngIf="mpHotspot.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', mpHotspot.fmpSubCompany?.id, 'view']" >{{ mpHotspot.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/mp-hotspot-mp', mpHotspot.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/mp-hotspot-mp', mpHotspot.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(mpHotspot)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

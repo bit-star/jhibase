@@ -48,6 +48,7 @@ public class FmpSubCompanyService {
         return fmpSubCompanyRepository.findAll();
     }
 
+
     /**
      * Get one fmpSubCompany by id.
      *

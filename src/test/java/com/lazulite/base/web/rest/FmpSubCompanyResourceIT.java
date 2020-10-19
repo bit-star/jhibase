@@ -26,10 +26,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link FmpSubCompanyResource} REST controller.
  */
 @SpringBootTest(classes = JhibaseApp.class)
-
 @AutoConfigureMockMvc
 @WithMockUser
 public class FmpSubCompanyResourceIT {
+
+    private static final String DEFAULT_MORE_TODO_URL = "AAAAAAAAAA";
+    private static final String UPDATED_MORE_TODO_URL = "BBBBBBBBBB";
 
     @Autowired
     private FmpSubCompanyRepository fmpSubCompanyRepository;
@@ -52,7 +54,8 @@ public class FmpSubCompanyResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static FmpSubCompany createEntity(EntityManager em) {
-        FmpSubCompany fmpSubCompany = new FmpSubCompany();
+        FmpSubCompany fmpSubCompany = new FmpSubCompany()
+            .moreTodoUrl(DEFAULT_MORE_TODO_URL);
         return fmpSubCompany;
     }
     /**
@@ -62,7 +65,8 @@ public class FmpSubCompanyResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static FmpSubCompany createUpdatedEntity(EntityManager em) {
-        FmpSubCompany fmpSubCompany = new FmpSubCompany();
+        FmpSubCompany fmpSubCompany = new FmpSubCompany()
+            .moreTodoUrl(UPDATED_MORE_TODO_URL);
         return fmpSubCompany;
     }
 
@@ -75,7 +79,6 @@ public class FmpSubCompanyResourceIT {
     @Transactional
     public void createFmpSubCompany() throws Exception {
         int databaseSizeBeforeCreate = fmpSubCompanyRepository.findAll().size();
-
         // Create the FmpSubCompany
         restFmpSubCompanyMockMvc.perform(post("/api/fmp-sub-companies")
             .contentType(MediaType.APPLICATION_JSON)
@@ -86,6 +89,7 @@ public class FmpSubCompanyResourceIT {
         List<FmpSubCompany> fmpSubCompanyList = fmpSubCompanyRepository.findAll();
         assertThat(fmpSubCompanyList).hasSize(databaseSizeBeforeCreate + 1);
         FmpSubCompany testFmpSubCompany = fmpSubCompanyList.get(fmpSubCompanyList.size() - 1);
+        assertThat(testFmpSubCompany.getMoreTodoUrl()).isEqualTo(DEFAULT_MORE_TODO_URL);
     }
 
     @Test
@@ -118,7 +122,8 @@ public class FmpSubCompanyResourceIT {
         restFmpSubCompanyMockMvc.perform(get("/api/fmp-sub-companies?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(fmpSubCompany.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(fmpSubCompany.getId().intValue())))
+            .andExpect(jsonPath("$.[*].moreTodoUrl").value(hasItem(DEFAULT_MORE_TODO_URL)));
     }
     
     @Test
@@ -131,9 +136,9 @@ public class FmpSubCompanyResourceIT {
         restFmpSubCompanyMockMvc.perform(get("/api/fmp-sub-companies/{id}", fmpSubCompany.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.id").value(fmpSubCompany.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(fmpSubCompany.getId().intValue()))
+            .andExpect(jsonPath("$.moreTodoUrl").value(DEFAULT_MORE_TODO_URL));
     }
-
     @Test
     @Transactional
     public void getNonExistingFmpSubCompany() throws Exception {
@@ -154,6 +159,8 @@ public class FmpSubCompanyResourceIT {
         FmpSubCompany updatedFmpSubCompany = fmpSubCompanyRepository.findById(fmpSubCompany.getId()).get();
         // Disconnect from session so that the updates on updatedFmpSubCompany are not directly saved in db
         em.detach(updatedFmpSubCompany);
+        updatedFmpSubCompany
+            .moreTodoUrl(UPDATED_MORE_TODO_URL);
 
         restFmpSubCompanyMockMvc.perform(put("/api/fmp-sub-companies")
             .contentType(MediaType.APPLICATION_JSON)
@@ -164,14 +171,13 @@ public class FmpSubCompanyResourceIT {
         List<FmpSubCompany> fmpSubCompanyList = fmpSubCompanyRepository.findAll();
         assertThat(fmpSubCompanyList).hasSize(databaseSizeBeforeUpdate);
         FmpSubCompany testFmpSubCompany = fmpSubCompanyList.get(fmpSubCompanyList.size() - 1);
+        assertThat(testFmpSubCompany.getMoreTodoUrl()).isEqualTo(UPDATED_MORE_TODO_URL);
     }
 
     @Test
     @Transactional
     public void updateNonExistingFmpSubCompany() throws Exception {
         int databaseSizeBeforeUpdate = fmpSubCompanyRepository.findAll().size();
-
-        // Create the FmpSubCompany
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restFmpSubCompanyMockMvc.perform(put("/api/fmp-sub-companies")

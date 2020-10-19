@@ -65,6 +65,8 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.base.domain.UucUserBaseinfo.class.getName() + ".msgReceiverGroups");
             createCache(cm, com.lazulite.base.domain.ProcessMsgTask.class.getName());
             createCache(cm, com.lazulite.base.domain.PushSubject.class.getName() + ".processMsgTasks");
+            createCache(cm, com.lazulite.base.domain.MpHotspot.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".mpHotspots");
             // jhipster-needle-ehcache-add-entry
         };
     }
