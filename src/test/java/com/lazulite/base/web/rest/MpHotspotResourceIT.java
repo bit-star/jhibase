@@ -47,8 +47,8 @@ public class MpHotspotResourceIT {
     private static final Long DEFAULT_ORDER_NUM = 1L;
     private static final Long UPDATED_ORDER_NUM = 2L;
 
-    private static final String DEFAULT_REMARK = "AAAAAAAAAA";
-    private static final String UPDATED_REMARK = "BBBBBBBBBB";
+    private static final String DEFAULT_NOTE = "AAAAAAAAAA";
+    private static final String UPDATED_NOTE = "BBBBBBBBBB";
 
     @Autowired
     private MpHotspotRepository mpHotspotRepository;
@@ -77,7 +77,7 @@ public class MpHotspotResourceIT {
             .pathUrl(DEFAULT_PATH_URL)
             .addTime(DEFAULT_ADD_TIME)
             .orderNum(DEFAULT_ORDER_NUM)
-            .remark(DEFAULT_REMARK);
+            .note(DEFAULT_NOTE);
         return mpHotspot;
     }
     /**
@@ -93,7 +93,7 @@ public class MpHotspotResourceIT {
             .pathUrl(UPDATED_PATH_URL)
             .addTime(UPDATED_ADD_TIME)
             .orderNum(UPDATED_ORDER_NUM)
-            .remark(UPDATED_REMARK);
+            .note(UPDATED_NOTE);
         return mpHotspot;
     }
 
@@ -121,7 +121,7 @@ public class MpHotspotResourceIT {
         assertThat(testMpHotspot.getPathUrl()).isEqualTo(DEFAULT_PATH_URL);
         assertThat(testMpHotspot.getAddTime()).isEqualTo(DEFAULT_ADD_TIME);
         assertThat(testMpHotspot.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
-        assertThat(testMpHotspot.getRemark()).isEqualTo(DEFAULT_REMARK);
+        assertThat(testMpHotspot.getNote()).isEqualTo(DEFAULT_NOTE);
     }
 
     @Test
@@ -160,7 +160,7 @@ public class MpHotspotResourceIT {
             .andExpect(jsonPath("$.[*].pathUrl").value(hasItem(DEFAULT_PATH_URL)))
             .andExpect(jsonPath("$.[*].addTime").value(hasItem(DEFAULT_ADD_TIME.toString())))
             .andExpect(jsonPath("$.[*].orderNum").value(hasItem(DEFAULT_ORDER_NUM.intValue())))
-            .andExpect(jsonPath("$.[*].remark").value(hasItem(DEFAULT_REMARK)));
+            .andExpect(jsonPath("$.[*].note").value(hasItem(DEFAULT_NOTE)));
     }
     
     @Test
@@ -179,7 +179,7 @@ public class MpHotspotResourceIT {
             .andExpect(jsonPath("$.pathUrl").value(DEFAULT_PATH_URL))
             .andExpect(jsonPath("$.addTime").value(DEFAULT_ADD_TIME.toString()))
             .andExpect(jsonPath("$.orderNum").value(DEFAULT_ORDER_NUM.intValue()))
-            .andExpect(jsonPath("$.remark").value(DEFAULT_REMARK));
+            .andExpect(jsonPath("$.note").value(DEFAULT_NOTE));
     }
     @Test
     @Transactional
@@ -207,7 +207,7 @@ public class MpHotspotResourceIT {
             .pathUrl(UPDATED_PATH_URL)
             .addTime(UPDATED_ADD_TIME)
             .orderNum(UPDATED_ORDER_NUM)
-            .remark(UPDATED_REMARK);
+            .note(UPDATED_NOTE);
 
         restMpHotspotMockMvc.perform(put("/api/mp-hotspots")
             .contentType(MediaType.APPLICATION_JSON)
@@ -223,7 +223,7 @@ public class MpHotspotResourceIT {
         assertThat(testMpHotspot.getPathUrl()).isEqualTo(UPDATED_PATH_URL);
         assertThat(testMpHotspot.getAddTime()).isEqualTo(UPDATED_ADD_TIME);
         assertThat(testMpHotspot.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
-        assertThat(testMpHotspot.getRemark()).isEqualTo(UPDATED_REMARK);
+        assertThat(testMpHotspot.getNote()).isEqualTo(UPDATED_NOTE);
     }
 
     @Test

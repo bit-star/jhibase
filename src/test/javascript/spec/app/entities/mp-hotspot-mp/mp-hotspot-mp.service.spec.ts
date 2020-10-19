@@ -74,7 +74,7 @@ describe('Service Tests', () => {
             pathUrl: 'BBBBBB',
             addTime: currentDate.format(DATE_TIME_FORMAT),
             orderNum: 1,
-            remark: 'BBBBBB',
+            note: 'BBBBBB',
           },
           elemDefault
         );
@@ -101,7 +101,7 @@ describe('Service Tests', () => {
             pathUrl: 'BBBBBB',
             addTime: currentDate.format(DATE_TIME_FORMAT),
             orderNum: 1,
-            remark: 'BBBBBB',
+            note: 'BBBBBB',
           },
           elemDefault
         );

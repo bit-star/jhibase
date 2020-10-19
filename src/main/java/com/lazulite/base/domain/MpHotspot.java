@@ -38,8 +38,8 @@ public class MpHotspot implements Serializable {
     @Column(name = "order_num")
     private Long orderNum;
 
-    @Column(name = "remark")
-    private String remark;
+    @Column(name = "note")
+    private String note;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "mpHotspots", allowSetters = true)
@@ -119,17 +119,17 @@ public class MpHotspot implements Serializable {
         this.orderNum = orderNum;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getNote() {
+        return note;
     }
 
-    public MpHotspot remark(String remark) {
-        this.remark = remark;
+    public MpHotspot note(String note) {
+        this.note = note;
         return this;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public FmpSubCompany getFmpSubCompany() {
@@ -172,7 +172,7 @@ public class MpHotspot implements Serializable {
             ", pathUrl='" + getPathUrl() + "'" +
             ", addTime='" + getAddTime() + "'" +
             ", orderNum=" + getOrderNum() +
-            ", remark='" + getRemark() + "'" +
+            ", note='" + getNote() + "'" +
             "}";
     }
 }

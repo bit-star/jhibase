@@ -22,7 +22,7 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "remark",
+      "fieldName": "note",
       "fieldType": "String"
     }
   ],
