@@ -1,47 +1,30 @@
 
 
 
-entity MsgReceiverGroup{
+entity MpHotspot{
 	name String,
-    desc String
-}
 
+	imageUrl String,
 
-entity UucDepartmentTree{
-}
+	pathUrl String ,
 
+	addTime Instant,
 
-
-entity UucUserBaseinfo{
+	orderNum Long,
+  
+	remark String
 }
 
 entity FmpSubCompany{
+	moreTodoUrl String
 }
 
-entity ProcessMsgTask{
-}
 
 
 
-entity PushSubject { 
- 	agentId Long,
-    name String,
-    agentGroupId String,
-    titleColor String,
-    remark String
-} 
-
-
-// defining multiple OneToMany relationships with comments
-relationship ManyToMany {
-    MsgReceiverGroup to UucDepartmentTree,
-    MsgReceiverGroup to UucUserBaseinfo,
-}
 
 relationship OneToMany {
-  FmpSubCompany to MsgReceiverGroup,
-  FmpSubCompany to PushSubject,
-  PushSubject to ProcessMsgTask
+  FmpSubCompany to MpHotspot,
 }
 
 
