@@ -1,0 +1,282 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fmp-micro-app-mp-heading" jhiTranslate="jhibaseApp.fmpMicroApp.home.createOrEditLabel">Create or edit a Fmp Micro App</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.catCode" for="field_catCode">Cat Code</label>
+                    <input type="text" class="form-control" name="catCode" id="field_catCode"
+                           formControlName="catCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.parentCatId" for="field_parentCatId">Parent Cat Id</label>
+                    <input type="text" class="form-control" name="parentCatId" id="field_parentCatId"
+                           formControlName="parentCatId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.levelNumber" for="field_levelNumber">Level Number</label>
+                    <input type="number" class="form-control" name="levelNumber" id="field_levelNumber"
+                           formControlName="levelNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.isLeaf" for="field_isLeaf">Is Leaf</label>
+                    <input type="text" class="form-control" name="isLeaf" id="field_isLeaf"
+                           formControlName="isLeaf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.businessCode" for="field_businessCode">Business Code</label>
+                    <input type="text" class="form-control" name="businessCode" id="field_businessCode"
+                           formControlName="businessCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.endpointUrl" for="field_endpointUrl">Endpoint Url</label>
+                    <input type="text" class="form-control" name="endpointUrl" id="field_endpointUrl"
+                           formControlName="endpointUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.iconImg" for="field_iconImg">Icon Img</label>
+                    <input type="text" class="form-control" name="iconImg" id="field_iconImg"
+                           formControlName="iconImg"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.bannerImg" for="field_bannerImg">Banner Img</label>
+                    <input type="text" class="form-control" name="bannerImg" id="field_bannerImg"
+                           formControlName="bannerImg"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.thumbnail" for="field_thumbnail">Thumbnail</label>
+                    <input type="text" class="form-control" name="thumbnail" id="field_thumbnail"
+                           formControlName="thumbnail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.sortCode" for="field_sortCode">Sort Code</label>
+                    <input type="text" class="form-control" name="sortCode" id="field_sortCode"
+                           formControlName="sortCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.systemType" for="field_systemType">System Type</label>
+                    <input type="text" class="form-control" name="systemType" id="field_systemType"
+                           formControlName="systemType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.contentOwnerCode" for="field_contentOwnerCode">Content Owner Code</label>
+                    <input type="text" class="form-control" name="contentOwnerCode" id="field_contentOwnerCode"
+                           formControlName="contentOwnerCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.lable" for="field_lable">Lable</label>
+                    <input type="text" class="form-control" name="lable" id="field_lable"
+                           formControlName="lable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.isNew" for="field_isNew">Is New</label>
+                    <select class="form-control" name="isNew" formControlName="isNew" id="field_isNew">
+                        <option value="New">{{ 'jhibaseApp.IsNew.New' | translate }}</option>
+                        <option value="NotNew">{{ 'jhibaseApp.IsNew.NotNew' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="OffLine">{{ 'jhibaseApp.MicroAppStatus.OffLine' | translate }}</option>
+                        <option value="OnLIne">{{ 'jhibaseApp.MicroAppStatus.OnLIne' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.openMethod" for="field_openMethod">Open Method</label>
+                    <select class="form-control" name="openMethod" formControlName="openMethod" id="field_openMethod">
+                        <option value="Nesting">{{ 'jhibaseApp.OpenMethod.Nesting' | translate }}</option>
+                        <option value="PopUp">{{ 'jhibaseApp.OpenMethod.PopUp' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.language" for="field_language">Language</label>
+                    <select class="form-control" name="language" formControlName="language" id="field_language">
+                        <option value="ZH">{{ 'jhibaseApp.Language.ZH' | translate }}</option>
+                        <option value="EN">{{ 'jhibaseApp.Language.EN' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.isFixed" for="field_isFixed">Is Fixed</label>
+                    <select class="form-control" name="isFixed" formControlName="isFixed" id="field_isFixed">
+                        <option value="Fixed">{{ 'jhibaseApp.IsFixed.Fixed' | translate }}</option>
+                        <option value="NotFixed">{{ 'jhibaseApp.IsFixed.NotFixed' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagKey01" for="field_tagKey01">Tag Key 01</label>
+                    <input type="text" class="form-control" name="tagKey01" id="field_tagKey01"
+                           formControlName="tagKey01"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagVal01" for="field_tagVal01">Tag Val 01</label>
+                    <input type="text" class="form-control" name="tagVal01" id="field_tagVal01"
+                           formControlName="tagVal01"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagKey02" for="field_tagKey02">Tag Key 02</label>
+                    <input type="text" class="form-control" name="tagKey02" id="field_tagKey02"
+                           formControlName="tagKey02"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagVal02" for="field_tagVal02">Tag Val 02</label>
+                    <input type="text" class="form-control" name="tagVal02" id="field_tagVal02"
+                           formControlName="tagVal02"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagKey03" for="field_tagKey03">Tag Key 03</label>
+                    <input type="text" class="form-control" name="tagKey03" id="field_tagKey03"
+                           formControlName="tagKey03"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.tagVal03" for="field_tagVal03">Tag Val 03</label>
+                    <input type="text" class="form-control" name="tagVal03" id="field_tagVal03"
+                           formControlName="tagVal03"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.catName" for="field_catName">Cat Name</label>
+                    <input type="text" class="form-control" name="catName" id="field_catName"
+                           formControlName="catName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.filterSql" for="field_filterSql">Filter Sql</label>
+                    <input type="text" class="form-control" name="filterSql" id="field_filterSql"
+                           formControlName="filterSql"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.sharingFlag" for="field_sharingFlag">Sharing Flag</label>
+                    <input type="text" class="form-control" name="sharingFlag" id="field_sharingFlag"
+                           formControlName="sharingFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.category" for="field_category">Category</label>
+                    <input type="text" class="form-control" name="category" id="field_category"
+                           formControlName="category"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.imgClass" for="field_imgClass">Img Class</label>
+                    <input type="text" class="form-control" name="imgClass" id="field_imgClass"
+                           formControlName="imgClass"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.isInternal" for="field_isInternal">Is Internal</label>
+                    <input type="text" class="form-control" name="isInternal" id="field_isInternal"
+                           formControlName="isInternal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.customFlag" for="field_customFlag">Custom Flag</label>
+                    <input type="text" class="form-control" name="customFlag" id="field_customFlag"
+                           formControlName="customFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.portal" for="field_portal">Portal</label>
+                    <input type="text" class="form-control" name="portal" id="field_portal"
+                           formControlName="portal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.businessUnit" for="field_businessUnit">Business Unit</label>
+                    <input type="text" class="form-control" name="businessUnit" id="field_businessUnit"
+                           formControlName="businessUnit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.businessOwners" for="field_businessOwners">Business Owners</label>
+                    <input type="text" class="form-control" name="businessOwners" id="field_businessOwners"
+                           formControlName="businessOwners"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.businessOwnersMobile" for="field_businessOwnersMobile">Business Owners Mobile</label>
+                    <input type="text" class="form-control" name="businessOwnersMobile" id="field_businessOwnersMobile"
+                           formControlName="businessOwnersMobile"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhibaseApp.fmpMicroApp.uucDepartmentTrees" for="field_uucDepartmentTrees">Uuc Department Trees</label>
+                    <select class="form-control" id="field_uucDepartmentTrees" multiple name="uucDepartmentTrees" formControlName="uucDepartmentTrees">
+                        <option [ngValue]="getSelected(editForm.get('uucDepartmentTrees')!.value, uucDepartmentTreeOption)" *ngFor="let uucDepartmentTreeOption of uucdepartmenttrees; trackBy: trackById">{{ uucDepartmentTreeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhibaseApp.fmpMicroApp.usableUser" for="field_usableUsers">Usable User</label>
+                    <select class="form-control" id="field_usableUsers" multiple name="usableUsers" formControlName="usableUsers">
+                        <option [ngValue]="getSelected(editForm.get('usableUsers')!.value, uucUserBaseinfoOption)" *ngFor="let uucUserBaseinfoOption of uucuserbaseinfos; trackBy: trackById">{{ uucUserBaseinfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.fmpMicroAppType" for="field_fmpMicroAppType">Fmp Micro App Type</label>
+                    <select class="form-control" id="field_fmpMicroAppType" name="fmpMicroAppType" formControlName="fmpMicroAppType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fmpMicroAppTypeOption.id === editForm.get('fmpMicroAppType')!.value?.id ? editForm.get('fmpMicroAppType')!.value : fmpMicroAppTypeOption" *ngFor="let fmpMicroAppTypeOption of fmpmicroapptypes; trackBy: trackById">{{ fmpMicroAppTypeOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhibaseApp.fmpMicroApp.creatorCompany" for="field_creatorCompany">Creator Company</label>
+                    <select class="form-control" id="field_creatorCompany" name="creatorCompany" formControlName="creatorCompany">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fmpSubCompanyOption.id === editForm.get('creatorCompany')!.value?.id ? editForm.get('creatorCompany')!.value : fmpSubCompanyOption" *ngFor="let fmpSubCompanyOption of fmpsubcompanies; trackBy: trackById">{{ fmpSubCompanyOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

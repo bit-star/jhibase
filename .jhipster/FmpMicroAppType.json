@@ -1,0 +1,52 @@
+{
+  "name": "FmpMicroAppType",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "portalId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "fmpMicroAppType",
+      "relationshipName": "fmpMicroApp"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fmpSubCompany",
+      "otherEntityRelationshipName": "fmpMicroAppType",
+      "relationshipName": "fmpSubCompany",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201127020812",
+  "entityTableName": "fmp_micro_app_type",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

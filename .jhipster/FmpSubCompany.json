@@ -2,16 +2,76 @@
   "name": "FmpSubCompany",
   "fields": [
     {
-      "fieldName": "moreTodoUrl",
+      "fieldName": "name",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adminGroupId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ifPublic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "styleId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [
     {
       "relationshipType": "one-to-many",
-      "otherEntityName": "mpHotspot",
+      "otherEntityName": "managerUser",
       "otherEntityRelationshipName": "fmpSubCompany",
-      "relationshipName": "mpHotspot"
+      "relationshipName": "managerUser"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "banner",
+      "otherEntityRelationshipName": "fmpSubCompany",
+      "relationshipName": "banner"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fmpMicroAppType",
+      "otherEntityRelationshipName": "fmpSubCompany",
+      "relationshipName": "fmpMicroAppType"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "creatorCompany",
+      "relationshipName": "createdApp"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "microAppGroup",
+      "otherEntityRelationshipName": "fmpSubCompany",
+      "relationshipName": "microAppGroup"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "fmpSubCompany",
+      "relationshipName": "fmpMicroApp",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucDepartmentTree",
+      "otherEntityRelationshipName": "fmpSubCompany",
+      "relationshipName": "uucDepartmentTree",
+      "otherEntityField": "id",
+      "ownerSide": true
     }
   ],
   "changelogDate": "20200224085100",

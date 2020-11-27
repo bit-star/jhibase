@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity MicroAppGroup.
+    -->
+    <changeSet id="20201127020312-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="micro_app_group_id"
+                                 baseTableName="micro_app_group_fmp_micro_app"
+                                 constraintName="fk_micro_app_group_fmp_micro_app_micro_app_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="micro_app_group"/>
+
+        <addForeignKeyConstraint baseColumnNames="fmp_micro_app_id"
+                                 baseTableName="micro_app_group_fmp_micro_app"
+                                 constraintName="fk_micro_app_group_fmp_micro_app_fmp_micro_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_sub_company_id"
+                                 baseTableName="micro_app_group"
+                                 constraintName="fk_micro_app_group_fmp_sub_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+    </changeSet>
+</databaseChangeLog>

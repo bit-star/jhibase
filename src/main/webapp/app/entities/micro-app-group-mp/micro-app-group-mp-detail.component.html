@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="microAppGroup">
+            <h2><span jhiTranslate="jhibaseApp.microAppGroup.detail.title">Micro App Group</span> {{ microAppGroup.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.microAppGroup.name">Name</span></dt>
+                <dd>
+                    <span>{{ microAppGroup.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.microAppGroup.fmpMicroApp">Fmp Micro App</span></dt>
+                <dd>
+                    <span *ngFor="let fmpMicroApp of microAppGroup.fmpMicroApps; let last = last">
+                        <a [routerLink]="['/fmp-micro-app-mp', fmpMicroApp?.id, 'view']">{{ fmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.microAppGroup.fmpSubCompany">Fmp Sub Company</span></dt>
+                <dd>
+                    <div *ngIf="microAppGroup.fmpSubCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', microAppGroup.fmpSubCompany?.id, 'view']">{{ microAppGroup.fmpSubCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/micro-app-group-mp', microAppGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

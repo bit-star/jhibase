@@ -67,6 +67,38 @@ public class CacheConfiguration {
             createCache(cm, com.lazulite.base.domain.PushSubject.class.getName() + ".processMsgTasks");
             createCache(cm, com.lazulite.base.domain.MpHotspot.class.getName());
             createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".mpHotspots");
+            createCache(cm, com.lazulite.base.domain.MicroAppGroup.class.getName());
+            createCache(cm, com.lazulite.base.domain.MicroAppGroup.class.getName() + ".uucDepartmentTrees");
+            createCache(cm, com.lazulite.base.domain.MicroAppGroup.class.getName() + ".uucUserBaseinfos");
+            createCache(cm, com.lazulite.base.domain.MicroAppGroup.class.getName() + ".fmpMicroApps");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".fmpWidgetInfos");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".uucDepartmentTrees");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".usableUsers");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".fmpSubCompanies");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".collectionUsers");
+            createCache(cm, com.lazulite.base.domain.FmpMicroApp.class.getName() + ".microAppGroups");
+            createCache(cm, com.lazulite.base.domain.UucDepartmentTree.class.getName() + ".usables");
+            createCache(cm, com.lazulite.base.domain.UucDepartmentTree.class.getName() + ".managers");
+            createCache(cm, com.lazulite.base.domain.UucDepartmentTree.class.getName() + ".fmpSubCompanies");
+            createCache(cm, com.lazulite.base.domain.UucUserBaseinfo.class.getName() + ".collectionFmpMicroApps");
+            createCache(cm, com.lazulite.base.domain.UucUserBaseinfo.class.getName() + ".usableFmpMicroApps");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".managerUsers");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".banners");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".fmpMicroAppTypes");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".createdApps");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".microAppGroups");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".fmpMicroApps");
+            createCache(cm, com.lazulite.base.domain.FmpSubCompany.class.getName() + ".uucDepartmentTrees");
+            createCache(cm, com.lazulite.base.domain.FmpMicroAppType.class.getName());
+            createCache(cm, com.lazulite.base.domain.FmpMicroAppType.class.getName() + ".fmpMicroApps");
+            createCache(cm, com.lazulite.base.domain.FmpWidgetInfo.class.getName());
+            createCache(cm, com.lazulite.base.domain.Banner.class.getName());
+            createCache(cm, com.lazulite.base.domain.DdUser.class.getName());
+            createCache(cm, com.lazulite.base.domain.ManagerUser.class.getName());
+            createCache(cm, com.lazulite.base.domain.ManagerUser.class.getName() + ".uucDepartmentTrees");
+            createCache(cm, com.lazulite.base.domain.PortalRouting.class.getName());
+            createCache(cm, com.lazulite.base.domain.DdUserPortalRouting.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
