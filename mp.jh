@@ -1,0 +1,324 @@
+
+
+
+
+
+enum IsNew {
+    New, NotNew
+}
+
+enum MicroAppStatus {
+    OffLine, OnLIne
+}
+
+enum OpenMethod {
+	Nesting,
+    PopUp
+}
+
+enum Language{
+	ZH, EN
+}
+
+enum IsFixed{
+	Fixed, NotFixed
+}
+
+entity MicroAppGroup{
+	name String
+}
+
+
+
+
+entity FmpMicroApp {
+    catCode String,
+    parentCatId String,
+    levelNumber Integer,
+    isLeaf String,
+    businessCode String,
+    endpointUrl String,
+    iconImg String,
+    bannerImg String,
+    thumbnail String,
+    sortCode String,
+    systemType String,
+    contentOwnerCode String,
+    lable String,
+    isNew IsNew,
+    status MicroAppStatus,
+    openMethod OpenMethod,
+    language Language,
+    isFixed IsFixed,
+    tagKey01 String,
+    tagVal01 String,
+    tagKey02 String,
+    tagVal02 String,
+    tagKey03 String,
+    tagVal03 String,
+    catName String,
+    filterSql String,
+    sharingFlag String,
+    category String,
+    imgClass String,
+    isInternal String,
+    customFlag String,
+    portal String,
+    description String,
+    businessUnit String,
+    businessOwners String,
+    businessOwnersMobile String
+}
+
+entity UucDepartmentTree{
+	name String,
+    namePy String,
+    code String,
+    parentDepId String,
+    parentDepName String,
+    status String,
+    disporder String,
+    namePath String,
+    codePath String,
+    depIdPath String,
+    depLevel String,
+    aliveFlag String,
+    recCreateTime Instant,
+    recCreator String,
+    recReviseTime Instant,
+  	recRevisor String,
+    deptUserCount String,
+    microappId String,
+    enName String,
+    onlyCode String,
+    srcDeptId String,
+    srcDeptType String,
+    srcType String,
+    srcDeptUcode String
+}
+
+entity UucUserBaseinfo {
+   jobCode String,
+   type String,
+   fullname String,
+   namePy String,
+   sex String 
+   birthday String,
+   email String ,
+   tel String,
+   telExt String,
+   stateCode1 String,
+   mobile1 String,
+   stateCode2 String,
+   mobile2 String,
+   stateCode3 String,
+   mobile3 String,
+   stateCode4 String,
+   mobile4 String,
+   stateCode5 String,
+   mobile5 String,
+   titleDesc String,
+   titleEn String,
+   checkNum String,
+   disporder Integer,
+   workPlace String,
+   userLevel String,
+   hiredate Instant,
+   nickname String,
+   memo String,
+   isHidden String,
+   aliveFlag String,
+   recCreateTime Instant,
+   recCreator String,
+   recReviseTime Instant,
+   recRevisor String,
+   isActivated String,
+   activationTime Instant,
+   appVersion String,
+   isOnlyAdminTitle String,
+   jobnumber String,
+   avatar String,
+   enName String,
+   enWorkplace String,
+   enTitleDesc String,	
+   onlyCode String,
+   hrCardId String,
+   employeeType String
+}
+
+entity FmpSubCompany{
+	name String,
+    code String,
+    adminGroupId String,
+    ifPublic String,
+    styleId String,
+  	isDeleted Boolean 
+}
+
+entity FmpMicroAppType{
+	code String,
+    name String,
+    language String,
+    portalId String,
+    isDeleted Boolean
+}
+
+entity FmpWidgetInfo{
+	code String,
+    portalId String,
+    title String,
+    catId String,
+    dataUrl String,
+    sort String,
+    dataUrlParam PassingForm,
+    isTop TopOption,
+    contentType WidgetContentType,
+    type WidgeType,
+    isDeleted Boolean
+}
+
+ enum WidgeType { 
+ 	OA, Personal, General
+ } 
+
+ enum PassingForm { 
+ 	JobCode, Email, Mobile
+ } 
+ 
+enum TopOption { 
+ 	Top, NotTop, EnTop
+ } 
+
+enum WidgetContentType { 
+ 	List, Image, Html
+ } 
+ 
+enum BannerType { 
+ 	Global, General
+} 
+
+enum Status { 
+ 	Available, Unavailable
+} 
+
+
+
+
+entity Banner{
+    rank Long,
+    type BannerType,
+    status Status,
+    pathUrl String,
+    bannerUrl String,
+    remark String
+}
+
+entity DdUser{
+        unionid String,
+        remark String,
+        userid  String,
+        isLeaderInDepts  String,
+        isBoss  Boolean,
+        hiredDate BigDecimal,
+        isSenior  Boolean,
+        tel  String,
+        department String,
+        workPlace  String ,
+        orderInDepts  String,
+        mobile  String ,
+        errmsg  String ,
+        active  Boolean,
+        avatar  String ,
+        isAdmin Boolean,
+        isHide Boolean,
+        jobnumber  String,
+        name  String,
+        extattr String,
+        stateCode  String,
+        position  String,
+        roles  String
+ }
+ 
+ entity ManagerUser{
+ 	 parentId Long,
+     type ManagerUserType,
+ }
+ 
+ 
+entity PortalRouting{
+ 	mucAppOwner String,
+    mucAppId String,
+    mucAppUrl String,
+    mucAppName String,
+    mucAppNameEn String
+ }
+ 
+entity DdUserPortalRouting{
+ 	jobCode String,
+    mobile String,
+    microappUrl String,
+    injectionFlag String,
+    injectionApiUri String,
+    mucAppId String
+ }
+ 
+
+ 
+
+ 
+ enum ManagerUserType { 
+ 	SuperAdministrator, NormalAdministrator, SubAdministrator
+ } 
+ 
+ 
+
+
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    FmpMicroApp to FmpWidgetInfo,
+    FmpSubCompany to ManagerUser,
+    FmpSubCompany to Banner,
+    FmpSubCompany to FmpMicroAppType,
+    FmpMicroAppType to FmpMicroApp,
+    FmpSubCompany{createdApp} to FmpMicroApp{creatorCompany},
+    FmpSubCompany to MicroAppGroup,
+    MicroAppGroup to UucDepartmentTree,
+    MicroAppGroup to UucUserBaseinfo
+}
+
+
+relationship ManyToMany {
+   	FmpMicroApp{uucDepartmentTrees} to UucDepartmentTree{usable},
+    FmpSubCompany to FmpMicroApp,
+    FmpMicroApp{usableUser} to UucUserBaseinfo{usableFmpMicroApp},
+    UucUserBaseinfo{collectionFmpMicroApp} to FmpMicroApp{collectionUsers},
+    ManagerUser {uucDepartmentTrees} to UucDepartmentTree{manager} ,
+    MicroAppGroup to FmpMicroApp,
+    FmpSubCompany to UucDepartmentTree
+}
+
+
+
+
+paginate
+     UucDepartmentTree,
+     UucUserBaseinfo
+  with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceClass
+
+// Set an angular suffix
+angularSuffix * with mp
+
+filter UucDepartmentTree , UucUserBaseinfo
+
+
+
