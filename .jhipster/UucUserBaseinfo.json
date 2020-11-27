@@ -1,0 +1,226 @@
+{
+  "name": "UucUserBaseinfo",
+  "fields": [
+    {
+      "fieldName": "jobCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "namePy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telExt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateCode5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobile5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "titleDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "titleEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "disporder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "workPlace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hiredate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nickname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "memo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isHidden",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "aliveFlag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recCreateTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "recCreator",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recReviseTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "recRevisor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActivated",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activationTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "appVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isOnlyAdminTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobnumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avatar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enWorkplace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enTitleDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "onlyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hrCardId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "employeeType",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "collectionUsers",
+      "relationshipName": "collectionFmpMicroApp",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "microAppGroup",
+      "otherEntityRelationshipName": "uucUserBaseinfo",
+      "relationshipName": "microAppGroup",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "usableUser",
+      "relationshipName": "usableFmpMicroApp",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201127024255",
+  "entityTableName": "uuc_user_baseinfo",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity FmpMicroApp.
+    -->
+    <changeSet id="20201127024055-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_micro_app_id"
+                                 baseTableName="fmp_micro_app_uuc_department_trees"
+                                 constraintName="fk_fmp_micro_app_uuc_department_trees_fmp_micro_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app"/>
+
+        <addForeignKeyConstraint baseColumnNames="uuc_department_trees_id"
+                                 baseTableName="fmp_micro_app_uuc_department_trees"
+                                 constraintName="fk_fmp_micro_app_uuc_department_trees_uuc_department_trees_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_department_tree"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_micro_app_id"
+                                 baseTableName="fmp_micro_app_usable_user"
+                                 constraintName="fk_fmp_micro_app_usable_user_fmp_micro_app_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app"/>
+
+        <addForeignKeyConstraint baseColumnNames="usable_user_id"
+                                 baseTableName="fmp_micro_app_usable_user"
+                                 constraintName="fk_fmp_micro_app_usable_user_usable_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="uuc_user_baseinfo"/>
+        
+        <addForeignKeyConstraint baseColumnNames="fmp_micro_app_type_id"
+                                 baseTableName="fmp_micro_app"
+                                 constraintName="fk_fmp_micro_app_fmp_micro_app_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_micro_app_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="creator_company_id"
+                                 baseTableName="fmp_micro_app"
+                                 constraintName="fk_fmp_micro_app_creator_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fmp_sub_company"/>
+
+    </changeSet>
+</databaseChangeLog>

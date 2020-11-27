@@ -1,0 +1,74 @@
+{
+  "name": "FmpWidgetInfo",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "portalId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sort",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataUrlParam",
+      "fieldType": "PassingForm",
+      "fieldValues": "JobCode,Email,Mobile"
+    },
+    {
+      "fieldName": "isTop",
+      "fieldType": "TopOption",
+      "fieldValues": "Top,NotTop,EnTop"
+    },
+    {
+      "fieldName": "contentType",
+      "fieldType": "WidgetContentType",
+      "fieldValues": "List,Image,Html"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "WidgeType",
+      "fieldValues": "OA,Personal,General"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fmpMicroApp",
+      "otherEntityRelationshipName": "fmpWidgetInfo",
+      "relationshipName": "fmpMicroApp",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201127024555",
+  "entityTableName": "fmp_widget_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

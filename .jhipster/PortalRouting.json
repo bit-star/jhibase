@@ -1,0 +1,38 @@
+{
+  "name": "PortalRouting",
+  "fields": [
+    {
+      "fieldName": "mucAppOwner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucAppId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucAppUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucAppName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucAppNameEn",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201127024955",
+  "entityTableName": "portal_routing",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

@@ -1,0 +1,228 @@
+{
+  "name": "FmpMicroApp",
+  "fields": [
+    {
+      "fieldName": "catCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "parentCatId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "levelNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isLeaf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endpointUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iconImg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bannerImg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thumbnail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sortCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "systemType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contentOwnerCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isNew",
+      "fieldType": "IsNew",
+      "fieldValues": "New,NotNew"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "MicroAppStatus",
+      "fieldValues": "OffLine,OnLIne"
+    },
+    {
+      "fieldName": "openMethod",
+      "fieldType": "OpenMethod",
+      "fieldValues": "Nesting,PopUp"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "ZH,EN"
+    },
+    {
+      "fieldName": "isFixed",
+      "fieldType": "IsFixed",
+      "fieldValues": "Fixed,NotFixed"
+    },
+    {
+      "fieldName": "tagKey01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagVal01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagKey02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagVal02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagKey03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagVal03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "filterSql",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sharingFlag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imgClass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isInternal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customFlag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "portal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessUnit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessOwners",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessOwnersMobile",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fmpWidgetInfo",
+      "otherEntityRelationshipName": "fmpMicroApp",
+      "relationshipName": "fmpWidgetInfo"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucDepartmentTree",
+      "otherEntityRelationshipName": "usable",
+      "relationshipName": "uucDepartmentTrees",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucUserBaseinfo",
+      "otherEntityRelationshipName": "usableFmpMicroApp",
+      "relationshipName": "usableUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fmpMicroAppType",
+      "otherEntityRelationshipName": "fmpMicroApp",
+      "relationshipName": "fmpMicroAppType",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fmpSubCompany",
+      "otherEntityRelationshipName": "createdApp",
+      "relationshipName": "creatorCompany",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "fmpSubCompany",
+      "otherEntityRelationshipName": "fmpMicroApp",
+      "relationshipName": "fmpSubCompany",
+      "otherEntityField": "id",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucUserBaseinfo",
+      "otherEntityRelationshipName": "collectionFmpMicroApp",
+      "relationshipName": "collectionUsers",
+      "otherEntityField": "id",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "microAppGroup",
+      "otherEntityRelationshipName": "fmpMicroApp",
+      "relationshipName": "microAppGroup",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201127024055",
+  "entityTableName": "fmp_micro_app",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

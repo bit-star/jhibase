@@ -38,6 +38,18 @@
     <include file="config/liquibase/changelog/20201127021212_added_entity_ManagerUser.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201127021312_added_entity_PortalRouting.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201127021412_added_entity_DdUserPortalRouting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127023955_added_entity_MicroAppGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024055_added_entity_FmpMicroApp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024155_added_entity_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024255_added_entity_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024355_added_entity_FmpSubCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024455_added_entity_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024555_added_entity_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024655_added_entity_Banner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024755_added_entity_DdUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024855_added_entity_ManagerUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024955_added_entity_PortalRouting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127025055_added_entity_DdUserPortalRouting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190923014649_added_entity_constraints_UserProduct.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190926105031_added_entity_constraints_CspaceFile.xml" relativeToChangelogFile="false"/>
@@ -55,5 +67,14 @@
     <include file="config/liquibase/changelog/20201127020912_added_entity_constraints_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201127021012_added_entity_constraints_Banner.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201127021212_added_entity_constraints_ManagerUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127023955_added_entity_constraints_MicroAppGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024055_added_entity_constraints_FmpMicroApp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024155_added_entity_constraints_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024255_added_entity_constraints_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024355_added_entity_constraints_FmpSubCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024455_added_entity_constraints_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024555_added_entity_constraints_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024655_added_entity_constraints_Banner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127024855_added_entity_constraints_ManagerUser.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
