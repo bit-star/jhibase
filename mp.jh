@@ -102,7 +102,7 @@ entity UucUserBaseinfo {
    type String,
    fullname String,
    namePy String,
-   sex String
+   sex String 
    birthday String,
    email String ,
    tel String,
@@ -140,7 +140,7 @@ entity UucUserBaseinfo {
    avatar String,
    enName String,
    enWorkplace String,
-   enTitleDesc String,
+   enTitleDesc String,	
    onlyCode String,
    hrCardId String,
    employeeType String
@@ -152,7 +152,7 @@ entity FmpSubCompany{
     adminGroupId String,
     ifPublic String,
     styleId String,
-  	isDeleted Boolean
+  	isDeleted Boolean 
 }
 
 entity FmpMicroAppType{
@@ -177,29 +177,29 @@ entity FmpWidgetInfo{
     isDeleted Boolean
 }
 
- enum WidgeType {
+ enum WidgeType { 
  	OA, Personal, General
- }
+ } 
 
- enum PassingForm {
+ enum PassingForm { 
  	JobCode, Email, Mobile
- }
-
-enum TopOption {
+ } 
+ 
+enum TopOption { 
  	Top, NotTop, EnTop
- }
+ } 
 
-enum WidgetContentType {
+enum WidgetContentType { 
  	List, Image, Html
- }
-
-enum BannerType {
+ } 
+ 
+enum BannerType { 
  	Global, General
-}
+} 
 
-enum Status {
+enum Status { 
  	Available, Unavailable
-}
+} 
 
 
 
@@ -238,13 +238,13 @@ entity DdUser{
         position  String,
         roles  String
  }
-
+ 
  entity ManagerUser{
  	 parentId Long,
      type ManagerUserType,
  }
-
-
+ 
+ 
 entity PortalRouting{
  	mucAppOwner String,
     mucAppId String,
@@ -252,7 +252,7 @@ entity PortalRouting{
     mucAppName String,
     mucAppNameEn String
  }
-
+ 
 entity DdUserPortalRouting{
  	jobCode String,
     mobile String,
@@ -261,16 +261,16 @@ entity DdUserPortalRouting{
     injectionApiUri String,
     mucAppId String
  }
+ 
 
+ 
 
-
-
-
- enum ManagerUserType {
+ 
+ enum ManagerUserType { 
  	SuperAdministrator, NormalAdministrator, SubAdministrator
- }
-
-
+ } 
+ 
+ 
 
 
 
