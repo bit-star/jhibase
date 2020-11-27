@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.microAppGroup.home.title">Micro App Groups</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-micro-app-group-mp" [routerLink]="['/micro-app-group-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.microAppGroup.home.createLabel">
+            Create a new Micro App Group
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="microAppGroups?.length === 0">
+        <span jhiTranslate="jhibaseApp.microAppGroup.home.notFound">No microAppGroups found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="microAppGroups && microAppGroups.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.microAppGroup.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.microAppGroup.fmpMicroApp">Fmp Micro App</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.microAppGroup.fmpSubCompany">Fmp Sub Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let microAppGroup of microAppGroups ;trackBy: trackId">
+                    <td><a [routerLink]="['/micro-app-group-mp', microAppGroup.id, 'view']">{{ microAppGroup.id }}</a></td>
+                    <td>{{ microAppGroup.name }}</td>
+                    <td>
+                        <span *ngFor="let fmpMicroApp of microAppGroup.fmpMicroApps; let last = last">
+                            <a class="form-control-static" [routerLink]="['/fmp-micro-app-mp', fmpMicroApp?.id, 'view']">{{ fmpMicroApp.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <div *ngIf="microAppGroup.fmpSubCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', microAppGroup.fmpSubCompany?.id, 'view']" >{{ microAppGroup.fmpSubCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/micro-app-group-mp', microAppGroup.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/micro-app-group-mp', microAppGroup.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(microAppGroup)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

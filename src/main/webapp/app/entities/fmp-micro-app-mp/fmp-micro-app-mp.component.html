@@ -1,0 +1,155 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhibaseApp.fmpMicroApp.home.title">Fmp Micro Apps</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fmp-micro-app-mp" [routerLink]="['/fmp-micro-app-mp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhibaseApp.fmpMicroApp.home.createLabel">
+            Create a new Fmp Micro App
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fmpMicroApps?.length === 0">
+        <span jhiTranslate="jhibaseApp.fmpMicroApp.home.notFound">No fmpMicroApps found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fmpMicroApps && fmpMicroApps.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.catCode">Cat Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.parentCatId">Parent Cat Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.levelNumber">Level Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.isLeaf">Is Leaf</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.businessCode">Business Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.endpointUrl">Endpoint Url</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.iconImg">Icon Img</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.bannerImg">Banner Img</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.thumbnail">Thumbnail</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.sortCode">Sort Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.systemType">System Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.contentOwnerCode">Content Owner Code</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.lable">Lable</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.isNew">Is New</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.openMethod">Open Method</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.language">Language</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.isFixed">Is Fixed</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey01">Tag Key 01</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal01">Tag Val 01</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey02">Tag Key 02</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal02">Tag Val 02</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey03">Tag Key 03</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal03">Tag Val 03</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.catName">Cat Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.filterSql">Filter Sql</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.sharingFlag">Sharing Flag</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.category">Category</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.imgClass">Img Class</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.isInternal">Is Internal</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.customFlag">Custom Flag</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.portal">Portal</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.businessUnit">Business Unit</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.businessOwners">Business Owners</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.businessOwnersMobile">Business Owners Mobile</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.uucDepartmentTrees">Uuc Department Trees</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.usableUser">Usable User</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.fmpMicroAppType">Fmp Micro App Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhibaseApp.fmpMicroApp.creatorCompany">Creator Company</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fmpMicroApp of fmpMicroApps ;trackBy: trackId">
+                    <td><a [routerLink]="['/fmp-micro-app-mp', fmpMicroApp.id, 'view']">{{ fmpMicroApp.id }}</a></td>
+                    <td>{{ fmpMicroApp.catCode }}</td>
+                    <td>{{ fmpMicroApp.parentCatId }}</td>
+                    <td>{{ fmpMicroApp.levelNumber }}</td>
+                    <td>{{ fmpMicroApp.isLeaf }}</td>
+                    <td>{{ fmpMicroApp.businessCode }}</td>
+                    <td>{{ fmpMicroApp.endpointUrl }}</td>
+                    <td>{{ fmpMicroApp.iconImg }}</td>
+                    <td>{{ fmpMicroApp.bannerImg }}</td>
+                    <td>{{ fmpMicroApp.thumbnail }}</td>
+                    <td>{{ fmpMicroApp.sortCode }}</td>
+                    <td>{{ fmpMicroApp.systemType }}</td>
+                    <td>{{ fmpMicroApp.contentOwnerCode }}</td>
+                    <td>{{ fmpMicroApp.lable }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.IsNew.' + fmpMicroApp.isNew }}">{{ fmpMicroApp.isNew }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.MicroAppStatus.' + fmpMicroApp.status }}">{{ fmpMicroApp.status }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.OpenMethod.' + fmpMicroApp.openMethod }}">{{ fmpMicroApp.openMethod }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.Language.' + fmpMicroApp.language }}">{{ fmpMicroApp.language }}</td>
+                    <td jhiTranslate="{{ 'jhibaseApp.IsFixed.' + fmpMicroApp.isFixed }}">{{ fmpMicroApp.isFixed }}</td>
+                    <td>{{ fmpMicroApp.tagKey01 }}</td>
+                    <td>{{ fmpMicroApp.tagVal01 }}</td>
+                    <td>{{ fmpMicroApp.tagKey02 }}</td>
+                    <td>{{ fmpMicroApp.tagVal02 }}</td>
+                    <td>{{ fmpMicroApp.tagKey03 }}</td>
+                    <td>{{ fmpMicroApp.tagVal03 }}</td>
+                    <td>{{ fmpMicroApp.catName }}</td>
+                    <td>{{ fmpMicroApp.filterSql }}</td>
+                    <td>{{ fmpMicroApp.sharingFlag }}</td>
+                    <td>{{ fmpMicroApp.category }}</td>
+                    <td>{{ fmpMicroApp.imgClass }}</td>
+                    <td>{{ fmpMicroApp.isInternal }}</td>
+                    <td>{{ fmpMicroApp.customFlag }}</td>
+                    <td>{{ fmpMicroApp.portal }}</td>
+                    <td>{{ fmpMicroApp.description }}</td>
+                    <td>{{ fmpMicroApp.businessUnit }}</td>
+                    <td>{{ fmpMicroApp.businessOwners }}</td>
+                    <td>{{ fmpMicroApp.businessOwnersMobile }}</td>
+                    <td>
+                        <span *ngFor="let uucDepartmentTrees of fmpMicroApp.uucDepartmentTrees; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-department-tree-mp', uucDepartmentTrees?.id, 'view']">{{ uucDepartmentTrees.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let usableUser of fmpMicroApp.usableUsers; let last = last">
+                            <a class="form-control-static" [routerLink]="['/uuc-user-baseinfo-mp', usableUser?.id, 'view']">{{ usableUser.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <div *ngIf="fmpMicroApp.fmpMicroAppType">
+                            <a [routerLink]="['/fmp-micro-app-type-mp', fmpMicroApp.fmpMicroAppType?.id, 'view']" >{{ fmpMicroApp.fmpMicroAppType?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="fmpMicroApp.creatorCompany">
+                            <a [routerLink]="['/fmp-sub-company-mp', fmpMicroApp.creatorCompany?.id, 'view']" >{{ fmpMicroApp.creatorCompany?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fmp-micro-app-mp', fmpMicroApp.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fmp-micro-app-mp', fmpMicroApp.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fmpMicroApp)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

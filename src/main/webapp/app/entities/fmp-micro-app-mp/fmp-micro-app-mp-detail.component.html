@@ -1,0 +1,194 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fmpMicroApp">
+            <h2><span jhiTranslate="jhibaseApp.fmpMicroApp.detail.title">Fmp Micro App</span> {{ fmpMicroApp.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.catCode">Cat Code</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.catCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.parentCatId">Parent Cat Id</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.parentCatId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.levelNumber">Level Number</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.levelNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.isLeaf">Is Leaf</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.isLeaf }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.businessCode">Business Code</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.businessCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.endpointUrl">Endpoint Url</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.endpointUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.iconImg">Icon Img</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.iconImg }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.bannerImg">Banner Img</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.bannerImg }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.thumbnail">Thumbnail</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.thumbnail }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.sortCode">Sort Code</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.sortCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.systemType">System Type</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.systemType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.contentOwnerCode">Content Owner Code</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.contentOwnerCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.lable">Lable</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.lable }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.isNew">Is New</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.IsNew.' + fmpMicroApp.isNew }}">{{ fmpMicroApp.isNew }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.MicroAppStatus.' + fmpMicroApp.status }}">{{ fmpMicroApp.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.openMethod">Open Method</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.OpenMethod.' + fmpMicroApp.openMethod }}">{{ fmpMicroApp.openMethod }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.Language.' + fmpMicroApp.language }}">{{ fmpMicroApp.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.isFixed">Is Fixed</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhibaseApp.IsFixed.' + fmpMicroApp.isFixed }}">{{ fmpMicroApp.isFixed }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey01">Tag Key 01</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagKey01 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal01">Tag Val 01</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagVal01 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey02">Tag Key 02</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagKey02 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal02">Tag Val 02</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagVal02 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagKey03">Tag Key 03</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagKey03 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.tagVal03">Tag Val 03</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.tagVal03 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.catName">Cat Name</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.catName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.filterSql">Filter Sql</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.filterSql }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.sharingFlag">Sharing Flag</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.sharingFlag }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.category">Category</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.category }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.imgClass">Img Class</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.imgClass }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.isInternal">Is Internal</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.isInternal }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.customFlag">Custom Flag</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.customFlag }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.portal">Portal</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.portal }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.description">Description</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.businessUnit">Business Unit</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.businessUnit }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.businessOwners">Business Owners</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.businessOwners }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.businessOwnersMobile">Business Owners Mobile</span></dt>
+                <dd>
+                    <span>{{ fmpMicroApp.businessOwnersMobile }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.uucDepartmentTrees">Uuc Department Trees</span></dt>
+                <dd>
+                    <span *ngFor="let uucDepartmentTrees of fmpMicroApp.uucDepartmentTrees; let last = last">
+                        <a [routerLink]="['/uuc-department-tree-mp', uucDepartmentTrees?.id, 'view']">{{ uucDepartmentTrees.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.usableUser">Usable User</span></dt>
+                <dd>
+                    <span *ngFor="let usableUser of fmpMicroApp.usableUsers; let last = last">
+                        <a [routerLink]="['/uuc-user-baseinfo-mp', usableUser?.id, 'view']">{{ usableUser.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.fmpMicroAppType">Fmp Micro App Type</span></dt>
+                <dd>
+                    <div *ngIf="fmpMicroApp.fmpMicroAppType">
+                        <a [routerLink]="['/fmp-micro-app-type-mp', fmpMicroApp.fmpMicroAppType?.id, 'view']">{{ fmpMicroApp.fmpMicroAppType?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhibaseApp.fmpMicroApp.creatorCompany">Creator Company</span></dt>
+                <dd>
+                    <div *ngIf="fmpMicroApp.creatorCompany">
+                        <a [routerLink]="['/fmp-sub-company-mp', fmpMicroApp.creatorCompany?.id, 'view']">{{ fmpMicroApp.creatorCompany?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fmp-micro-app-mp', fmpMicroApp.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

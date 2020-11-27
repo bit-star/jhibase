@@ -1,0 +1,43 @@
+{
+  "name": "ManagerUser",
+  "fields": [
+    {
+      "fieldName": "parentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ManagerUserType",
+      "fieldValues": "SuperAdministrator,NormalAdministrator,SubAdministrator"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "uucDepartmentTree",
+      "otherEntityRelationshipName": "manager",
+      "relationshipName": "uucDepartmentTrees",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fmpSubCompany",
+      "otherEntityRelationshipName": "managerUser",
+      "relationshipName": "fmpSubCompany",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201127021212",
+  "entityTableName": "manager_user",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "angularJSSuffix": "mp"
+}

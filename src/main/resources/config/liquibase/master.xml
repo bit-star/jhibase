@@ -29,6 +29,15 @@
     <include file="config/liquibase/changelog/20200408094300_added_entity_PushSubject.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200413091900_added_entity_ProcessMsgTask.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201019084527_added_entity_MpHotspot.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020312_added_entity_MicroAppGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020412_added_entity_FmpMicroApp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020812_added_entity_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020912_added_entity_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021012_added_entity_Banner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021112_added_entity_DdUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021212_added_entity_ManagerUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021312_added_entity_PortalRouting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021412_added_entity_DdUserPortalRouting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190923014649_added_entity_constraints_UserProduct.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190926105031_added_entity_constraints_CspaceFile.xml" relativeToChangelogFile="false"/>
@@ -39,5 +48,12 @@
     <include file="config/liquibase/changelog/20200408094300_added_entity_constraints_PushSubject.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200413091900_added_entity_constraints_ProcessMsgTask.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201019084527_added_entity_constraints_MpHotspot.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020312_added_entity_constraints_MicroAppGroup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020412_added_entity_constraints_FmpMicroApp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200224085100_added_entity_constraints_FmpSubCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020812_added_entity_constraints_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127020912_added_entity_constraints_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021012_added_entity_constraints_Banner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201127021212_added_entity_constraints_ManagerUser.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
