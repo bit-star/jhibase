@@ -103,7 +103,7 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "microAppGroup",
       "otherEntityRelationshipName": "uucDepartmentTree",
-      "relationshipName": "group",
+      "relationshipName": "microAppGroup",
       "otherEntityField": "id"
     },
     {
