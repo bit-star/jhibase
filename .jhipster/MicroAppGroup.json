@@ -10,13 +10,13 @@
     {
       "relationshipType": "one-to-many",
       "otherEntityName": "uucDepartmentTree",
-      "otherEntityRelationshipName": "group",
+      "otherEntityRelationshipName": "microAppGroup",
       "relationshipName": "uucDepartmentTree"
     },
     {
       "relationshipType": "one-to-many",
       "otherEntityName": "uucUserBaseinfo",
-      "otherEntityRelationshipName": "group",
+      "otherEntityRelationshipName": "microAppGroup",
       "relationshipName": "uucUserBaseinfo"
     },
     {

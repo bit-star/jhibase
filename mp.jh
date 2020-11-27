@@ -286,8 +286,8 @@ relationship OneToMany {
     FmpMicroAppType to FmpMicroApp,
     FmpSubCompany{createdApp} to FmpMicroApp{creatorCompany},
     FmpSubCompany to MicroAppGroup,
-    MicroAppGroup to UucDepartmentTree {group},
-    MicroAppGroup to UucUserBaseinfo {group}
+    MicroAppGroup to UucDepartmentTree,
+    MicroAppGroup to UucUserBaseinfo
 }
 
 

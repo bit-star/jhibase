@@ -27,11 +27,11 @@ public class MicroAppGroup implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "microAppGroup")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<UucDepartmentTree> uucDepartmentTrees = new HashSet<>();
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "microAppGroup")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<UucUserBaseinfo> uucUserBaseinfos = new HashSet<>();
 
@@ -79,13 +79,13 @@ public class MicroAppGroup implements Serializable {
 
     public MicroAppGroup addUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
         this.uucDepartmentTrees.add(uucDepartmentTree);
-        uucDepartmentTree.setGroup(this);
+        uucDepartmentTree.setMicroAppGroup(this);
         return this;
     }
 
     public MicroAppGroup removeUucDepartmentTree(UucDepartmentTree uucDepartmentTree) {
         this.uucDepartmentTrees.remove(uucDepartmentTree);
-        uucDepartmentTree.setGroup(null);
+        uucDepartmentTree.setMicroAppGroup(null);
         return this;
     }
 
@@ -104,13 +104,13 @@ public class MicroAppGroup implements Serializable {
 
     public MicroAppGroup addUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
         this.uucUserBaseinfos.add(uucUserBaseinfo);
-        uucUserBaseinfo.setGroup(this);
+        uucUserBaseinfo.setMicroAppGroup(this);
         return this;
     }
 
     public MicroAppGroup removeUucUserBaseinfo(UucUserBaseinfo uucUserBaseinfo) {
         this.uucUserBaseinfos.remove(uucUserBaseinfo);
-        uucUserBaseinfo.setGroup(null);
+        uucUserBaseinfo.setMicroAppGroup(null);
         return this;
     }
 
