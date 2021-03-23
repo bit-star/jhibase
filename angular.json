@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jhibase": {
+    "jhisample": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "jhibase",
+  "defaultProject": "jhisample",
   "cli": {
     "packageManager": "npm"
   }

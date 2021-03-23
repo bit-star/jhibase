@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { JhibaseSharedModule } from 'app/shared/shared.module';
+import { JhisampleSharedModule } from 'app/shared/shared.module';
 
 import { PasswordStrengthBarComponent } from './password/password-strength-bar.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,7 +13,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { accountState } from './account.route';
 
 @NgModule({
-  imports: [JhibaseSharedModule, RouterModule.forChild(accountState)],
+  imports: [JhisampleSharedModule, RouterModule.forChild(accountState)],
   declarations: [
     ActivateComponent,
     RegisterComponent,
@@ -21,7 +21,7 @@ import { accountState } from './account.route';
     PasswordStrengthBarComponent,
     PasswordResetInitComponent,
     PasswordResetFinishComponent,
-    SettingsComponent
-  ]
+    SettingsComponent,
+  ],
 })
-export class JhibaseAccountModule {}
+export class AccountModule {}

@@ -2,10 +2,10 @@
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
 
     <property name="now" value="now()" dbms="h2"/>
-    <property name="now" value="now()" dbms="mysql"/>
+    <property name="now" value="now()" dbms="mysql, mariadb"/>
 
     <property name="floatType" value="float4" dbms="postgresql, h2"/>
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
@@ -14,67 +14,7 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190923014649_added_entity_UserProduct.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190926105031_added_entity_CspaceFile.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190926105032_added_entity_GovernmentReport.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191018084917_added_entity_HistorySearch.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200103025122_added_entity_LocationDTO.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200103025430_added_entity_LocationVM.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200103025757_added_entity_LocationFlat.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200224085100_added_entity_FmpSubCompany.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200224085200_added_entity_ServiceWindow.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408093900_added_entity_MsgReceiverGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094000_added_entity_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094100_added_entity_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094300_added_entity_PushSubject.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200413091900_added_entity_ProcessMsgTask.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201019084527_added_entity_MpHotspot.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020312_added_entity_MicroAppGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020412_added_entity_FmpMicroApp.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020812_added_entity_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020912_added_entity_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021012_added_entity_Banner.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021112_added_entity_DdUser.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021212_added_entity_ManagerUser.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021312_added_entity_PortalRouting.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021412_added_entity_DdUserPortalRouting.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127023955_added_entity_MicroAppGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024055_added_entity_FmpMicroApp.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024155_added_entity_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024255_added_entity_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024355_added_entity_FmpSubCompany.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024455_added_entity_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024555_added_entity_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024655_added_entity_Banner.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024755_added_entity_DdUser.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024855_added_entity_ManagerUser.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024955_added_entity_PortalRouting.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127025055_added_entity_DdUserPortalRouting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20190923014649_added_entity_constraints_UserProduct.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190926105031_added_entity_constraints_CspaceFile.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200224085200_added_entity_constraints_ServiceWindow.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408093900_added_entity_constraints_MsgReceiverGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094000_added_entity_constraints_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094100_added_entity_constraints_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200408094300_added_entity_constraints_PushSubject.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200413091900_added_entity_constraints_ProcessMsgTask.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201019084527_added_entity_constraints_MpHotspot.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020312_added_entity_constraints_MicroAppGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020412_added_entity_constraints_FmpMicroApp.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20200224085100_added_entity_constraints_FmpSubCompany.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020812_added_entity_constraints_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127020912_added_entity_constraints_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021012_added_entity_constraints_Banner.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127021212_added_entity_constraints_ManagerUser.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127023955_added_entity_constraints_MicroAppGroup.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024055_added_entity_constraints_FmpMicroApp.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024155_added_entity_constraints_UucDepartmentTree.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024255_added_entity_constraints_UucUserBaseinfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024355_added_entity_constraints_FmpSubCompany.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024455_added_entity_constraints_FmpMicroAppType.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024555_added_entity_constraints_FmpWidgetInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024655_added_entity_constraints_Banner.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20201127024855_added_entity_constraints_ManagerUser.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

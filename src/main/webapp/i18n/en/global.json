@@ -1,26 +1,12 @@
 {
   "global": {
-    "title": "Jhibase",
+    "title": "Jhisample",
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
     "menu": {
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "userProduct": "User Product",
-        "cspaceFile": "Cspace File",
-        "governmentReport": "Government Report",
-        "historySearch": "History Search",
-        "locationDto": "Location DTO",
-        "locationVm": "Location VM",
-        "locationFlat": "Location Flat",
-        "fmpSubCompanyMp": "Fmp Sub Company",
-        "serviceWindowMp": "Service Window",
-        "msgReceiverGroupMp": "Msg Receiver Group",
-        "uucDepartmentTreeMp": "Uuc Department Tree",
-        "uucUserBaseinfoMp": "Uuc User Baseinfo",
-        "pushSubjectMp": "Push Subject",
-        "processMsgTaskMp": "Process Msg Task",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -144,7 +130,11 @@
     "userexists": "Login name already used!",
     "emailexists": "Email is already in use!",
     "idexists": "A new {{ entityName }} cannot already have an ID",
-    "idnull": "Invalid ID"
+    "idnull": "Invalid ID",
+    "file": {
+      "could.not.extract": "Could not extract file",
+      "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
+    }
   },
   "footer": "This is your footer"
 }
