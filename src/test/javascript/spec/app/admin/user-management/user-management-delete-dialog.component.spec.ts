@@ -3,33 +3,35 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { JhibaseTestModule } from '../../../test.module';
-import { UserMgmtDeleteDialogComponent } from 'app/admin/user-management/user-management-delete-dialog.component';
+import { JhisampleTestModule } from '../../../test.module';
+import { MockEventManager } from '../../../helpers/mock-event-manager.service';
+import { MockActiveModal } from '../../../helpers/mock-active-modal.service';
+import { UserManagementDeleteDialogComponent } from 'app/admin/user-management/user-management-delete-dialog.component';
 import { UserService } from 'app/core/user/user.service';
 
 describe('Component Tests', () => {
   describe('User Management Delete Component', () => {
-    let comp: UserMgmtDeleteDialogComponent;
-    let fixture: ComponentFixture<UserMgmtDeleteDialogComponent>;
+    let comp: UserManagementDeleteDialogComponent;
+    let fixture: ComponentFixture<UserManagementDeleteDialogComponent>;
     let service: UserService;
-    let mockEventManager: any;
-    let mockActiveModal: any;
+    let mockEventManager: MockEventManager;
+    let mockActiveModal: MockActiveModal;
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [JhibaseTestModule],
-        declarations: [UserMgmtDeleteDialogComponent]
+        imports: [JhisampleTestModule],
+        declarations: [UserManagementDeleteDialogComponent],
       })
-        .overrideTemplate(UserMgmtDeleteDialogComponent, '')
+        .overrideTemplate(UserManagementDeleteDialogComponent, '')
         .compileComponents();
     }));
 
     beforeEach(() => {
-      fixture = TestBed.createComponent(UserMgmtDeleteDialogComponent);
+      fixture = TestBed.createComponent(UserManagementDeleteDialogComponent);
       comp = fixture.componentInstance;
       service = fixture.debugElement.injector.get(UserService);
-      mockEventManager = fixture.debugElement.injector.get(JhiEventManager);
-      mockActiveModal = fixture.debugElement.injector.get(NgbActiveModal);
+      mockEventManager = TestBed.get(JhiEventManager);
+      mockActiveModal = TestBed.get(NgbActiveModal);
     });
 
     describe('confirmDelete', () => {

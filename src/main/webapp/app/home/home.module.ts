@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { JhibaseSharedModule } from 'app/shared/shared.module';
+import { JhisampleSharedModule } from 'app/shared/shared.module';
 import { HOME_ROUTE } from './home.route';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [JhibaseSharedModule, RouterModule.forChild([HOME_ROUTE])],
-  declarations: [HomeComponent]
+  imports: [JhisampleSharedModule, RouterModule.forChild([HOME_ROUTE])],
+  declarations: [HomeComponent],
 })
-export class JhibaseHomeModule {}
+export class JhisampleHomeModule {}

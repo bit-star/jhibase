@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { JhibaseSharedLibsModule } from './shared-libs.module';
+import { JhisampleSharedLibsModule } from './shared-libs.module';
 import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe';
-import { JhiAlertComponent } from './alert/alert.component';
-import { JhiAlertErrorComponent } from './alert/alert-error.component';
-import { JhiLoginModalComponent } from './login/login.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertErrorComponent } from './alert/alert-error.component';
+import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [JhibaseSharedLibsModule],
-  declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
-  entryComponents: [JhiLoginModalComponent],
+  imports: [JhisampleSharedLibsModule],
+  declarations: [FindLanguageFromKeyPipe, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  entryComponents: [LoginModalComponent],
   exports: [
-    JhibaseSharedLibsModule,
+    JhisampleSharedLibsModule,
     FindLanguageFromKeyPipe,
-    JhiAlertComponent,
-    JhiAlertErrorComponent,
-    JhiLoginModalComponent,
-    HasAnyAuthorityDirective
-  ]
+    AlertComponent,
+    AlertErrorComponent,
+    LoginModalComponent,
+    HasAnyAuthorityDirective,
+  ],
 })
-export class JhibaseSharedModule {}
+export class JhisampleSharedModule {}
